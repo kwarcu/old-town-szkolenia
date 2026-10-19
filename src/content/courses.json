@@ -1,6 +1,6 @@
 {
-  "title": "Szkolenia",
-  "lede": "Każdy barber kiedyś zaczynał. Nie od perfekcyjnego fade'a, nie od pewności siebie przy fotelu, ale od pierwszych pytań, pierwszych błędów i pierwszych klientów. Dlatego mamy dwa szkolenia: 21 dni od podstaw i 10 dni dla osób, które już coś umieją, ale brakuje im pewności. Oba w naszym salonie przy Oświęcimskiej 1, na prawdziwych klientach, w grupie 2–3 osób, z Basią i Kubą, którzy codziennie pracują za fotelem.",
+  "title": "Szkolenia barberskie",
+  "lede": "W Szkole Barberingu Old Town w Tarnowskich Górach prowadzimy dwa szkolenia barberskie: 21 dni od podstaw i 10 dni dla osób, które już strzygą, ale brakuje im pewności. Oba odbywają się w naszym salonie przy Oświęcimskiej 1, na prawdziwych klientach, w grupie 2–3 osób, z Basią i Kubą, którzy codziennie pracują za fotelem.",
   "includedLabel": "W cenie obu szkoleń",
   "included": "narzędzia, produkty, cały salon z zapleczem, kuchnia, kawa i napoje. Nie musisz mieć własnego sprzętu.",
   "groupRule": "Startujemy od 2 osób; przy jednej osobie ustalamy termin i format indywidualnie.",
@@ -23,7 +23,7 @@
         }
       ],
       "group": "2–3 osoby",
-      "forWhom": "Dla osób bez doświadczenia, które chcą poznać zawód takim, jaki jest naprawdę.",
+      "forWhom": "21-dniowe szkolenie barberskie od podstaw dla osób bez doświadczenia, które chcą poznać zawód takim, jaki jest naprawdę.",
       "personas": [
         "od zera",
         "zmiana zawodu"
@@ -39,12 +39,14 @@
       "price": "10 000 zł",
       "priceValue": 10000,
       "deposit": "zaliczka 15 % (1 500 zł) przy zapisie",
-      "description": "21-dniowe szkolenie barberskie od podstaw w działającym Barber Shopie Old Town w Tarnowskich Górach. Grupa 2–3 osoby, praca z prawdziwymi klientami, wszystkie narzędzia w cenie, certyfikat ukończenia."
+      "description": "21-dniowe szkolenie barberskie od podstaw w działającym Barber Shopie Old Town w Tarnowskich Górach. Grupa 2–3 osoby, praca z prawdziwymi klientami, wszystkie narzędzia w cenie, certyfikat ukończenia.",
+      "ctaLabel": "Zapytaj o kurs od podstaw",
+      "kit": "W cenie: 21 dni w działającym salonie, narzędzia i produkty, praca z klientami salonu od pierwszego dnia oraz certyfikat podpisany przez Basię i Kubę."
     },
     {
       "id": "szkolenie-10-dniowe",
       "name": "Szkolenie 10-dniowe dla osób z doświadczeniem",
-      "short": "Nie od zera",
+      "short": "Masz już podstawy",
       "flagship": false,
       "days": 10,
       "daysLabel": "dni szkoleniowych",
@@ -59,14 +61,14 @@
         }
       ],
       "group": "2–3 osoby",
-      "forWhom": "Nie każdy zaczyna od zera. Czasem wystarczy dobry kierunek, by zrobić ogromny krok naprzód. Dla osób po szkole branżowej, po innym kursie i dla fryzjerek damskich, które chcą pewnie strzyc mężczyzn.",
+      "forWhom": "10-dniowe szkolenie barberskie dla osób po szkole branżowej, po innym kursie i dla fryzjerek damskich, które chcą pewnie strzyc mężczyzn. Czasem wystarczy dobry kierunek, by zrobić ogromny krok naprzód.",
       "personas": [
         "po szkole branżowej",
         "fryzjerka damska",
         "po innym kursie"
       ],
       "learn": [
-        "Nie zaczynamy od podstaw: skupiamy się na tym, czego Ci brakuje",
+        "Zaczynamy od tego, czego Ci brakuje",
         "Wspólnie znajdziemy to, co wymaga dopracowania, i pokażemy Ci, jak pracować szybciej, pewniej i bardziej świadomie",
         "Analiza włosów i kształtu głowy, dobór rozwiązań do klienta",
         "Detale, które odróżniają usługę poprawną od usługi na najwyższym poziomie"
@@ -76,8 +78,9 @@
       "price": "Po rozmowie",
       "priceValue": null,
       "deposit": "Najpierw chcemy wiedzieć, co już umiesz. Zadzwoń albo napisz, a po rozmowie dostaniesz konkretną kwotę.",
-      "description": "10-dniowe szkolenie barberskie dla osób z doświadczeniem: po szkole branżowej, fryzjerów damskich i po innych kursach. Działający barber shop w Tarnowskich Górach, grupa 2–3 osoby, praca z prawdziwymi klientami."
+      "description": "10-dniowe szkolenie barberskie dla osób z doświadczeniem: po szkole branżowej, fryzjerów damskich i po innych kursach. Działający barber shop w Tarnowskich Górach, grupa 2–3 osoby, praca z prawdziwymi klientami.",
+      "ctaLabel": "Zapytaj o kurs 10-dniowy",
+      "depositShort": "po rozmowie (zakres dopasowujemy do doświadczenia)"
     }
-  ],
-  "kit": "Narzędzia, produkty i cały salon w cenie. Nie musisz mieć własnego sprzętu."
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "title": "Opinie o salonie",
-  "lede": "Szkoła jest nowa. Salon, w którym uczysz się na żywym kliencie, ma za sobą ponad osiem lat i tysiące wizyt.",
+  "lede": "Szkoła jest nowa, ale salon, w którym uczysz się na żywym kliencie, ma ocenę 5,0 z 1 485 opinii na Booksy i ponad osiem lat pracy.",
   "rating": "5,0",
   "ratingValue": 5.0,
   "count": "1 485",
@@ -9,11 +9,6 @@
   "source": "Booksy",
   "checked": "2026-10-19",
   "note": "Pierwsza edycja rusza w listopadzie 2026. Opinie kursantów dodamy zaraz po niej.",
-  "quotes": [
-    {
-      "text": "Najlepsza, wyjątkowa, niepowtarzalna, profesjonalna!",
-      "who": "Piotr, opinia na Booksy"
-    }
-  ],
-  "_note": "Quotes are real Booksy reviews visible on 2026-10-19. The one naming Nikodem was dropped after the round-1 design critique (he is not on the page). Basia may add other reviews she has approved; the rating and count come from the Booksy listing."
+  "quotes": [],
+  "_note": "No quotes for now: the only public Polish text reviews on Booksy (2026-10-19) are either one-line adjectives or name a barber who is not on the page. Add quotes here once Basia picks reviews that mention her, Kuba or the shop; the rating and count come from the Booksy listing."
 }

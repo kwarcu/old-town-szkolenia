@@ -38,7 +38,7 @@ const jsonLd = [
     address: addressLd, telephone: contact.phoneE164,
     parentOrganization: { '@type': 'HairSalon', name: 'Barber Shop Old Town', address: addressLd, telephone: contact.phoneE164, url: site.social.oldSite },
     founder: { '@type': 'Person', '@id': personId, name: 'Barbara Frączek' },
-    areaServed: ['Tarnowskie Góry', 'województwo śląskie'],
+    areaServed: ['Tarnowskie Góry', 'Katowice', 'Bytom', 'Gliwice', 'województwo śląskie'],
     sameAs: [site.social.instagram, site.social.booksy, site.social.oldSite],
   },
   { '@context': 'https://schema.org', '@type': 'Person', '@id': personId, name: 'Barbara Frączek', alternateName: 'Basia', jobTitle: 'Właścicielka, prowadzi szkolenia', worksFor: { '@id': orgId }, knowsAbout: ['barbering', 'strzyżenie męskie', 'szkolenia barberskie'] },
@@ -57,14 +57,13 @@ const jsonLd = [
     <section class="hero" id="hero">
       <div class="inner-hero">
         <div class="hero-body">
-          <p class="kicker">{site.hero.kicker}</p>
-          <h1>{site.hero.headline}</h1>
+          <h1><span class="kicker">{site.hero.kicker}.</span>{" "}{site.hero.headline}</h1>
+          <ul class="facts" aria-label="Najważniejsze fakty">{facts.map((f) => <li>{nb(f)}</li>)}</ul>
           <p class="sub">{nb(site.hero.sub)}</p>
           <div class="cta">
             <a class="btn" href="#kontakt">{site.hero.ctaPrimary}</a>
             <a class="tlink" href={contact.phoneHref}>{nb(contact.phone)}</a>
           </div>
-          <ul class="facts" aria-label="Najważniejsze fakty">{facts.map((f) => <li>{nb(f)}</li>)}</ul>
         </div>
         <figure class="hero-photo">
           <Image src={heroImg} alt={site.hero.photoAlt} widths={[480, 800, 1200, 1600]} sizes="(min-width: 900px) 38vw, 100vw" loading="eager" fetchpriority="high" />
@@ -81,8 +80,8 @@ const jsonLd = [
         <div class="set">
           <div class="list">
             {courses.items.map((c) => (
-              <article class="course" id={c.id}>
-                <div class="when"><span class="star"></span>{c.flagship ? 'Najbliższy start: ' : 'Start: '}{c.cohorts[0].label}</div>
+              <article class:list={['course', { flagship: c.flagship }]} id={c.id}>
+                <div class="when">{c.flagship ? 'Najbliższy start: ' : 'Start: '}{c.cohorts[0].label}</div>
                 <div class="head-row"><b class="num">{c.days}</b><span class="label">{c.daysLabel}</span></div>
                 <h3>{c.short}</h3>
                 <p class="for">{nb(c.forWhom)}</p>
@@ -91,12 +90,12 @@ const jsonLd = [
                   <li class="who"><b>Dla kogo:</b> {c.personas.join(', ')}</li>
                 </ul>
                 <p class="incl">{c.certificate}. Terminy: {c.cohorts.map((k) => k.label).join(', ')}.</p>
-                <div class="price"><span class="label">{c.priceLabel}</span><b class="val">{nb(c.price)}</b><span class="dep">{nb(c.deposit)}</span><span class="kit">{courses.kit}</span></div>
-                <div class="cta"><a class="tlink" href="#kontakt">{site.hero.ctaPrimary}</a></div>
+                <div class="price"><span class="label">{c.priceLabel}</span><b class="val">{nb(c.price)}</b><span class="dep">{nb(c.deposit)}</span>{c.kit && <span class="kit">{nb(c.kit)}</span>}</div>
+                <div class="cta"><a class="tlink" href="#kontakt">{c.ctaLabel}</a></div>
               </article>
             ))}
           </div>
-          <p class="incl-all"><span class="star"></span><span>{nb(courses.groupRule)}</span></p>
+          <p class="incl-all"><b>{courses.includedLabel}:</b> {nb(courses.included)} {nb(courses.groupRule)}</p>
         </div>
       </div>
     </section>
@@ -111,8 +110,8 @@ const jsonLd = [
     </section>
 
     <section class="trio reveal" aria-label="Salon, w którym się uczysz">
-      {strip.map((s) => (
-        <figure class="shot">
+      {strip.map((s, i) => (
+        <figure class:list={['shot', { desk: i !== strip.length - 1 }]}>
           <Image src={s.src} alt={s.alt} widths={[480, 800, 1200]} sizes="(min-width: 900px) 33vw, 100vw" loading="lazy" />
           <figcaption>{nb(s.caption)}</figcaption>
         </figure>
@@ -127,16 +126,18 @@ const jsonLd = [
             <div class="trainer" id={t.id}>
               <figure class="shot"><Image src={t.src} alt={t.alt} widths={[480, 800, 1200]} sizes="(min-width: 900px) 40vw, 50vw" loading="lazy" /></figure>
               <h3>{t.name}</h3>
-              <div class="role">{t.role}</div>
+              <div class="role">{t.full !== t.name && <span>{t.full} · </span>}{t.role}</div>
               <p class="bio">{nb(t.bio)}</p>
               {t.quote && <blockquote><p>{t.quote}</p></blockquote>}
             </div>
           ))}
         </div>
-        <p class="history-intro set">{nb(site.history.intro)}</p>
-        <ol class="years set">
-          {site.history.items.map((h) => <li><b>{h.year}</b><p>{h.text}</p></li>)}
-        </ol>
+        <div class="after set">
+          <p class="history-intro">{nb(site.history.intro)}</p>
+          <ol class="years">
+            {site.history.items.map((h) => <li><b>{h.year}</b><span>{h.text}</span></li>)}
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -145,19 +146,14 @@ const jsonLd = [
         <div class="head set"><h2>{reviews.title}</h2><p class="lede">{reviews.lede}</p></div>
         <div class="split">
           <div class="set">
-            <div class="figures">
-              <div><b>{reviews.rating}</b><span class="label">ocena salonu na {reviews.source}</span></div>
-              <div><b>{nb(reviews.count)}</b><span class="label">{reviews.countLabel}</span></div>
-            </div>
-            <p class="foot" style="margin-top:22px">{reviews.note}<br><a class="tlink" href={site.social.booksy} target="_blank" rel="noopener">Zobacz opinie na Booksy</a></p>
+            <p class="foot">{reviews.note}<br><a class="tlink" href={site.social.booksy} target="_blank" rel="noopener">Zobacz opinie na Booksy</a></p>
           </div>
-          <div class="set">
+          {reviews.quotes.length > 0 && <div class="set">
             <blockquote class="lead-quote"><q>{reviews.quotes[0].text}</q><cite>{reviews.quotes[0].who}</cite></blockquote>
             <ul class="reviews">
               {reviews.quotes.slice(1).map((r) => <li><q>{r.text}</q><cite>{r.who}</cite></li>)}
             </ul>
-            <p class="foot"><a class="tlink" href={site.social.instagram} target="_blank" rel="noopener">{site.social.instagramLabel}</a></p>
-          </div>
+          </div>}
         </div>
       </div>
     </section>

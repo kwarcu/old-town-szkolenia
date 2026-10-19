@@ -5,20 +5,20 @@
   "by": "by Barber Shop Old Town, Tarnowskie Góry",
   "updated": "2026-10-19",
   "updatedLabel": "19.10.2026",
-  "title": "Szkoła Barberingu Old Town — szkolenia barberskie, Tarnowskie Góry",
-  "description": "Szkolenia barberskie w działającym barber shopie w Tarnowskich Górach. Od podstaw (21 dni) i 10-dniowe dla osób z doświadczeniem. Grupy 2–3 osoby, prawdziwi klienci.",
+  "title": "Szkolenie barberskie w Tarnowskich Górach – Old Town",
+  "description": "Szkolenie barberskie od podstaw (21 dni, 10 000 zł) i 10 dni dla fryzjerów. Prawdziwi klienci w barber shopie w Tarnowskich Górach, 30 min od Katowic.",
   "hero": {
-    "kicker": "Nie uczymy wyłącznie strzyc.",
+    "kicker": "Szkolenie barberskie w Tarnowskich Górach",
     "headline": "Uczymy, jak zostać barberem.",
-    "sub": "Szkolenia barberskie w działającym barber shopie w Tarnowskich Górach. Prawdziwi klienci, prowadzący za fotelem od 2003 roku.",
+    "sub": "Szkoła w działającym barber shopie na Śląsku. Prawdziwi klienci, prowadzący za fotelem od 2003 roku.",
     "ctaPrimary": "Zapytaj o szkolenie",
     "ctaCall": "Zadzwoń",
     "photoAlt": "Kuba strzyże klienta w Barber Shopie Old Town, obok drugi barber przy swoim fotelu"
   },
-  "brief": "Szkoła Barberingu Old Town to szkolenia barberskie prowadzone w działającym Barber Shopie Old Town przy ul. Oświęcimskiej 1 w Tarnowskich Górach. Dwa formaty: 21-dniowe szkolenie od podstaw i 10-dniowe dla osób z doświadczeniem. Uczysz się na prawdziwych klientach, w grupie 2–3 osób, pod okiem Basi i Kuby, którzy codziennie pracują za fotelem.",
+  "brief": "Szkoła Barberingu Old Town to szkolenia barberskie prowadzone w działającym Barber Shopie Old Town przy ul. Oświęcimskiej 1 w Tarnowskich Górach, na Śląsku, około 30 minut od Katowic, Bytomia i Gliwic. Dwa formaty: 21-dniowe szkolenie od podstaw i 10-dniowe dla osób z doświadczeniem. Uczysz się na prawdziwych klientach, w grupie 2–3 osób, pod okiem Basi i Kuby, którzy codziennie pracują za fotelem.",
   "day": {
     "title": "Jak wygląda szkolenie",
-    "intro": "Od pierwszego dnia uczestniczysz w codziennym życiu salonu. Zobaczysz, jak wygląda dzień w barber shopie, jak organizujemy pracę, jak współpracują ze sobą barberzy, jak rozmawiamy z klientami i jak radzimy sobie z sytuacjami, które każdego dnia pojawiają się w salonie. Każdy uczestnik jest inny, dlatego nie uczymy wszystkich w ten sam sposób.",
+    "intro": "Szkolenie odbywa się w godzinach pracy Barber Shopu Old Town: od pierwszego dnia uczestniczysz w codziennym życiu salonu i strzyżesz jego klientów pod okiem prowadzącego. Zobaczysz, jak organizujemy pracę, jak współpracują ze sobą barberzy, jak rozmawiamy z klientami i jak radzimy sobie z sytuacjami, które każdego dnia pojawiają się w salonie. Każdy uczestnik jest inny, dlatego nie uczymy wszystkich w ten sam sposób.",
     "steps": [
       {
         "n": "01",
@@ -33,7 +33,7 @@
       {
         "n": "03",
         "title": "Usługa",
-        "text": "Strzyżesz klienta salonu. Obserwujemy, podpowiadamy, korygujemy."
+        "text": "Strzyżesz klienta salonu. Basia albo Kuba stoi obok, podpowiada i koryguje na bieżąco."
       },
       {
         "n": "04",
@@ -82,10 +82,10 @@
   },
   "team": {
     "title": "Kto uczy",
-    "note": "Uczą ludzie, którzy codziennie pracują za fotelem i podpisują certyfikat własnym nazwiskiem.",
+    "note": "Szkolenia prowadzą Basia i Kuba, barberzy z Old Town w Tarnowskich Górach: codziennie pracują za fotelem i podpisują certyfikat własnym nazwiskiem.",
     "quote": "Wychodzisz stąd i mówisz sobie: „Jestem gotowy”."
   },
-  "faqTitle": "Pytania",
+  "faqTitle": "Pytania o szkolenie",
   "faqLede": "Nie ma tu Twojego pytania? Zadzwoń albo napisz. Odbierze ktoś z salonu.",
   "social": {
     "instagram": "https://www.instagram.com/barbershopoldtowntg/",
@@ -105,7 +105,16 @@
       {
         "label": "oldtownbarber.pl",
         "href": "https://oldtownbarber.pl"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/barbershopoldtowntg/"
+      },
+      {
+        "label": "Booksy",
+        "href": "https://booksy.com/pl-pl/101117_barber-shop-old-town_barber-shop_12569_tarnowskie-gory"
       }
     ]
-  }
+  },
+  "synonyms": "Inne nazwy tego, co robimy: kurs barberski, kurs barbera, szkoła barberingu, szkolenie barberskie dla fryzjerów."
 }

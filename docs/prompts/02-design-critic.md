@@ -13,4 +13,8 @@ You are a design critic at a top-tier studio reviewing screenshots of a landing 
 5. Say whether the first mobile viewport alone would make a candidate keep scrolling, and why.
 6. Give a score out of 10 for how close this is to the studio-level bar. Be bold and opinionated; do not reward safe choices.
 
-Constraints the page must keep (do not score these down, suggest within them): all copy in Polish; the section list and the facts (21 dni, 10 dni, 2–3 osoby, cena startowa 10 000 zł, zaliczka 15 %, terminy) are fixed by the owner; the FAQ answers must be readable without JavaScript; nothing about employment after the course or public funding; one primary CTA "Zapytaj o szkolenie" plus the phone number; the page stays bright (no black hero).
+Constraints the page must keep (do not score these down, suggest within them): all copy in Polish; the section list and the facts (21 dni, 10 dni, 2–3 osoby, cena startowa 10 000 zł, zaliczka 15 %, terminy) are fixed by the owner; the FAQ answers must be readable without JavaScript; nothing about employment after the course or public funding; one primary CTA "Zapytaj o szkolenie" plus the phone number; the page stays bright (no black hero); the photographs stay black-and-white (the owner's decision).
+
+## Copy-critic rule (Bartek, 2026-10-19)
+
+Every copy critic is briefed with this: **no "nie X, tylko Y" constructions** (not X but Y, "nie … a …", "zamiast … to …"). Write the affirmative half only. This overrides the owner's source text where it uses the pattern (the manifesto's "Nie uczymy wyłącznie strzyc. Uczymy, jak zostać barberem." became "Uczymy, jak zostać barberem.").
