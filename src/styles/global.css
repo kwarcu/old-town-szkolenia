@@ -91,55 +91,58 @@ header.site.open nav.top a { padding: 11px 0; border-bottom: 1px solid var(--rul
 .hero p.sub { margin-top: 20px; max-width: 34ch; }
 .hero .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; margin-top: 26px; }
 .hero .cta .btn { padding: 0 18px; font-size: 19px; }
+.hero .facts { margin: 22px 0 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); display: grid; grid-template-columns: 1fr 1fr; font-family: var(--cond); font-weight: 700; font-size: 16px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+.hero .facts li { padding: 10px 0 8px; border-bottom: 1px solid var(--rule); }
+.hero .facts li:nth-child(even) { padding-left: 14px; border-left: 1px solid var(--rule); }
 
-/* ---------- Szkolenia: the inverted spread ---------- */
-.slab { background: var(--ink); color: #d9d8d3; }
-.slab .inner { border-top-color: #6f6f6b; }
-.slab h2, .slab h3 { color: #fff; }
-.slab .label, .slab .lede { color: #a3a4a0; }
-.slab .tlink { color: #fff; border-color: #fff; }
-.slab .tlink:hover { border-color: var(--brass); }
+/* ---------- Szkolenia: two ruled columns on the paper, the price set as an ink plate ---------- */
 .courses .head .lede { max-width: 46ch; }
-.courses .list { margin-top: 34px; border-top: 2px solid #4a4a47; }
-.course { padding: 26px 0 30px; border-bottom: 1px solid #333330; display: flex; flex-direction: column; }
-.course .when { display: flex; align-items: center; gap: 9px; font-family: var(--sans); font-weight: 600; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: #a3a4a0; margin-bottom: 16px; }
+.courses .list { margin-top: 30px; border-top: 2px solid var(--ink); }
+.course { padding: 22px 0 28px; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; }
+.course .when { display: flex; align-items: center; gap: 9px; font-family: var(--sans); font-weight: 600; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
 .course .when .star { width: 11px; height: 11px; background-image: var(--star-brass); }
-.course .head-row { display: flex; align-items: baseline; gap: 12px; }
-.course .head-row .label { font-size: 15px; }
-.course .num { font-family: var(--cond); font-weight: 800; font-size: 72px; line-height: .82; letter-spacing: .005em; color: #fff; }
-.course h3 { margin-top: 20px; font-size: 27px; }
-.course p.for { margin-top: 14px; font-size: 18px; font-weight: 500; line-height: 1.4; color: #d9d8d3; }
-.course ul { margin: 18px 0 0; padding: 0; list-style: none; }
-.course li { position: relative; padding: 7px 0 7px 24px; font-size: 16px; color: #d9d8d3; }
-.course li::before { content: ""; position: absolute; left: 0; top: 13px; width: 9px; height: 9px; background: var(--star-paper) center/contain no-repeat; opacity: .75; }
-.course li.who { margin-top: 10px; padding-top: 12px; border-top: 1px solid #333330; color: #a3a4a0; }
+.course .head-row { display: flex; align-items: baseline; gap: 10px; }
+.course .head-row .label { font-size: 16px; color: var(--ink); }
+.course .num { font-family: var(--cond); font-weight: 800; font-size: 54px; line-height: .82; letter-spacing: .005em; color: var(--ink); }
+.course h3 { margin-top: 14px; font-size: 27px; }
+.course p.for { margin-top: 12px; font-size: 17px; font-weight: 500; line-height: 1.4; color: var(--ink); }
+.course ul { margin: 14px 0 0; padding: 0; list-style: none; }
+.course li { position: relative; padding: 5px 0 5px 22px; font-size: 16px; color: var(--text); }
+.course li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 9px; background: var(--star-ink) center/contain no-repeat; opacity: .8; }
+.course li.who { margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--rule); color: var(--muted); }
 .course li.who::before { content: none; }
-.course li.who b { color: #d9d8d3; font-weight: 600; }
-.course p.incl { margin: 16px 0 0; font-size: 14px; color: #a3a4a0; }
-.course .price { margin-top: 24px; padding-top: 16px; border-top: 1px solid #6f6f6b; }
-.course .price .val { font-family: var(--cond); font-weight: 800; font-size: 44px; line-height: 1; display: block; margin-top: 6px; color: #fff; }
-.course .price .dep { display: block; margin-top: 7px; font-size: 15px; color: #a3a4a0; }
-.course .cta { margin-top: 22px; }
-.incl-all { margin-top: 26px; padding-top: 16px; border-top: 1px solid #333330; font-size: 16px; color: #a3a4a0; display: flex; gap: 10px; align-items: flex-start; }
-.incl-all .star { background-image: var(--star-paper); width: 14px; height: 14px; margin-top: 5px; }
-.incl-all b { font-family: var(--cond); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #fff; }
-.incl-all .rule { display: block; margin-top: 6px; }
+.course li.who b { color: var(--ink); font-weight: 600; }
+.course p.incl { margin: 12px 0 0; font-size: 14px; color: var(--muted); }
+.course .price { margin-top: 20px; padding: 16px 18px 18px; background: var(--ink); color: #c9cbc8; }
+.course .price .label { color: #a3a4a0; }
+.course .price .val { font-family: var(--cond); font-weight: 800; font-size: 40px; line-height: 1; display: block; margin-top: 6px; color: #fff; }
+.course .price .dep { display: block; margin-top: 7px; font-size: 15px; color: #c9cbc8; }
+.course .price .kit { display: block; margin-top: 10px; padding-top: 10px; border-top: 1px solid #4a4a47; font-size: 15px; color: #fff; font-weight: 500; }
+.course .cta { margin-top: 18px; }
+.incl-all { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 16px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+.incl-all .star { width: 12px; height: 12px; margin-top: 6px; }
 
-/* ---------- Jak wygląda szkolenie ---------- */
-.steps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
-.steps li { display: grid; grid-template-columns: 38px 1fr; gap: 12px; padding: 14px 0; align-items: start; }
-.steps .tag { font-family: var(--sans); font-weight: 600; font-size: 14px; letter-spacing: .04em; color: var(--muted); padding-top: 4px; }
+/* ---------- Jak wygląda szkolenie: no ledger rule here, the numerals carry it ---------- */
+section.day.wrap > .inner { border-top: 0; padding-top: 0; }
+.day .head { grid-template-columns: 1fr; }
+.day .head h2 { font-size: 28px; color: var(--muted); font-weight: 700; }
+.steps { list-style: none; margin: 18px 0 0; padding: 0; }
+.steps li { display: grid; grid-template-columns: 56px 1fr; gap: 10px; padding: 14px 0; align-items: start; border-top: 1px solid var(--rule); }
+.steps .tag { font-family: var(--cond); font-weight: 800; font-size: 40px; line-height: .9; color: var(--ink); }
 .steps h3 { font-size: 23px; }
 .steps p { margin-top: 5px; font-size: 16px; }
 
 /* ---------- the strip of three photographs ---------- */
 .trio { padding: 0; display: grid; gap: 4px; background: var(--ink); }
-.trio img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.trio img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 .trio figcaption { margin: 0; padding: 12px 16px; background: var(--ink); color: #c2c3bf; font-size: 15px; }
 
 /* ---------- Kto uczy, with the years under it ---------- */
 .team .head .lede { max-width: 46ch; }
-.team .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; }
+.team .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
+section.team.wrap > .inner { border-top: 0; padding-top: 0; }
+.team .head { grid-template-columns: 1fr; }
+.team .head .lede { margin-top: 6px; }
 .trainer .shot img { aspect-ratio: 4 / 5; }
 .trainer h3 { margin: 16px 0 0; font-size: 26px; }
 .trainer .role { margin: 6px 0 0; font-size: 16px; color: var(--muted); }
@@ -174,7 +177,9 @@ header.site.open nav.top a { padding: 11px 0; border-bottom: 1px solid var(--rul
 .faq details[open] summary::after { content: "–"; }
 .faq details p { padding: 0 0 20px; font-size: 16px; max-width: 60ch; }
 
-/* ---------- Kontakt ---------- */
+/* ---------- Kontakt: no rule, the phone number opens it ---------- */
+section.contact.wrap > .inner { border-top: 0; padding-top: 0; }
+.contact { background: var(--paper-2); }
 .contact address { font-style: normal; display: grid; gap: 7px; margin-top: 28px; font-size: 16px; }
 .contact address .phone { font-family: var(--cond); font-weight: 800; letter-spacing: .03em; font-size: 28px; text-decoration: none; line-height: 1; color: var(--ink); border-bottom: 3px solid var(--ink); justify-self: start; }
 .contact address a { text-decoration: none; }
@@ -214,10 +219,6 @@ footer.site nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
 footer.site a { text-decoration: none; min-height: 32px; display: inline-flex; align-items: center; }
 footer.site a:hover { color: #fff; }
 footer.site .stamp { color: #9a9c99; font-size: 15px; }
-
-/* ---------- tile band ---------- */
-.tileband { height: 28px; background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2756%27%20height%3D%2728%27%20viewBox%3D%270%200%2056%2028%27%3E%3Crect%20width%3D%2756%27%20height%3D%2728%27%20fill%3D%27%23e7e3d9%27%2F%3E%3Cg%20fill%3D%27%23161615%27%3E%3Cg%20transform%3D%27translate%286%204%29%20scale%28.20%29%27%3E%3Cpath%20d%3D%27M50.00%2C0.00L57.27%2C32.45L85.36%2C14.64L67.55%2C42.73L100.00%2C50.00L67.55%2C57.27L85.36%2C85.36L57.27%2C67.55L50.00%2C100.00L42.73%2C67.55L14.64%2C85.36L32.45%2C57.27L0.00%2C50.00L32.45%2C42.73L14.64%2C14.64L42.73%2C32.45Z%27%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%27translate%2834%204%29%20scale%28.20%29%27%3E%3Cpath%20d%3D%27M50.00%2C0.00L57.27%2C32.45L85.36%2C14.64L67.55%2C42.73L100.00%2C50.00L67.55%2C57.27L85.36%2C85.36L57.27%2C67.55L50.00%2C100.00L42.73%2C67.55L14.64%2C85.36L32.45%2C57.27L0.00%2C50.00L32.45%2C42.73L14.64%2C14.64L42.73%2C32.45Z%27%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x center/auto 28px; }
-.tileband.on-ink { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2756%27%20height%3D%2728%27%20viewBox%3D%270%200%2056%2028%27%3E%3Crect%20width%3D%2756%27%20height%3D%2728%27%20fill%3D%27%23161615%27%2F%3E%3Cg%20fill%3D%27%23e7e3d9%27%3E%3Cg%20transform%3D%27translate%286%204%29%20scale%28.20%29%27%3E%3Cpath%20d%3D%27M50.00%2C0.00L57.27%2C32.45L85.36%2C14.64L67.55%2C42.73L100.00%2C50.00L67.55%2C57.27L85.36%2C85.36L57.27%2C67.55L50.00%2C100.00L42.73%2C67.55L14.64%2C85.36L32.45%2C57.27L0.00%2C50.00L32.45%2C42.73L14.64%2C14.64L42.73%2C32.45Z%27%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%27translate%2834%204%29%20scale%28.20%29%27%3E%3Cpath%20d%3D%27M50.00%2C0.00L57.27%2C32.45L85.36%2C14.64L67.55%2C42.73L100.00%2C50.00L67.55%2C57.27L85.36%2C85.36L57.27%2C67.55L50.00%2C100.00L42.73%2C67.55L14.64%2C85.36L32.45%2C57.27L0.00%2C50.00L32.45%2C42.73L14.64%2C14.64L42.73%2C32.45Z%27%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"); }
 
 /* ---------- sticky bar (mobile) ---------- */
 .bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: grid; grid-template-columns: 1.6fr 1fr; gap: 10px; padding: 10px var(--g); background: var(--paper); border-top: 2px solid var(--ink); transform: translateY(110%); transition: transform .3s ease; }
@@ -273,31 +274,37 @@ footer.site .stamp { color: #9a9c99; font-size: 15px; }
   .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 42% 44%; }
   .hero-body { padding: 0; }
   .hero .kicker { font-size: 17px; margin-bottom: 22px; }
-  .hero h1 { font-size: clamp(78px, 8.2vw, 140px); line-height: .96; letter-spacing: -.004em; }
+  .hero h1 { font-size: clamp(70px, 7.3vw, 116px); line-height: .94; letter-spacing: .012em; }
+  .hero .facts { font-size: 17px; margin-top: 30px; grid-template-columns: repeat(4, auto); justify-content: start; column-gap: 0; }
+  .hero .facts li { border-bottom: 0; padding: 12px 18px 0 0; }
+  .hero .facts li:nth-child(n+2) { border-left: 1px solid var(--rule); padding-left: 18px; }
   .hero p.sub { font-size: 20px; max-width: 32ch; margin-top: 30px; }
   .hero .cta { margin-top: 34px; margin-bottom: 8px; }
 
-  .courses .list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; margin-top: 44px; }
-  .course { padding: 30px 0 36px; }
-  .course + .course { border-left: 1px solid #333330; padding-left: 60px; margin-left: -60px; }
-  .course .num { font-size: 104px; }
+  .courses .list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; margin-top: 40px; }
+  .course { padding: 28px 0 32px; }
+  .course + .course { border-left: 1px solid var(--rule); padding-left: 60px; margin-left: -60px; }
+  .course .num { font-size: 76px; }
+  .course .head-row .label { font-size: 18px; }
   .course h3 { font-size: 34px; min-height: 2.1em; }
-  .course p.for { font-size: 20px; min-height: 4.2em; }
-  .course .price { margin-top: auto; }
-  .course .price .val { font-size: 50px; }
+  .course p.for { font-size: 19px; min-height: 4.2em; }
+  .course .price { margin-top: auto; padding: 20px 22px 22px; }
+  .course .price .val { font-size: 46px; }
 
-  .steps { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 40px; }
-  .steps li { display: block; border-bottom: 0; padding: 22px 0 0; }
-  .steps .tag { display: block; padding-bottom: 10px; }
+  .day .head h2 { font-size: 34px; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 40px; margin-top: 30px; }
+  .steps li { display: block; padding: 18px 0 0; border-top: 2px solid var(--ink); }
+  .steps .tag { display: block; padding-bottom: 12px; font-size: 56px; }
   .steps h3 { font-size: 26px; }
   .steps p { font-size: 17px; max-width: 54ch; }
 
   .trio { grid-template-columns: 4fr 3fr 4fr; gap: 4px; }
   .trio figure { display: flex; flex-direction: column; }
-  .trio img { aspect-ratio: auto; height: 560px; }
+  .trio img { aspect-ratio: auto; height: 520px; }
   .trio figcaption { flex: 1; padding: 12px 18px; }
 
-  .team .grid { margin-top: 34px; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .team .grid { margin-top: 30px; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .team .head { grid-template-columns: 5fr 7fr; column-gap: 60px; }
   .trainer h3 { font-size: 36px; }
   .trainer p.bio { font-size: 17px; }
   .years { grid-template-columns: repeat(4, 1fr); gap: 0 40px; margin-top: 48px; padding-top: 16px; }

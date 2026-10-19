@@ -18,26 +18,66 @@
   "brief": "Szkoła Barberingu Old Town to szkolenia barberskie prowadzone w działającym Barber Shopie Old Town przy ul. Oświęcimskiej 1 w Tarnowskich Górach. Dwa formaty: 21-dniowe szkolenie od podstaw i 10-dniowe dla osób z doświadczeniem. Uczysz się na prawdziwych klientach, w grupie 2–3 osób, pod okiem Basi i Kuby, którzy codziennie pracują za fotelem.",
   "day": {
     "title": "Jak wygląda szkolenie",
-    "intro": "Od pierwszego dnia uczestniczysz w codziennym życiu salonu. Zobaczysz prawdziwych klientów, prawdziwe sytuacje i wyzwania, z którymi barber spotyka się każdego dnia.",
+    "intro": "Od pierwszego dnia uczestniczysz w codziennym życiu salonu. Zobaczysz, jak wygląda dzień w barber shopie, jak organizujemy pracę, jak współpracują ze sobą barberzy, jak rozmawiamy z klientami i jak radzimy sobie z sytuacjami, które każdego dnia pojawiają się w salonie. Każdy uczestnik jest inny, dlatego nie uczymy wszystkich w ten sam sposób.",
     "steps": [
-      { "n": "01", "title": "Stanowisko", "text": "Przygotowujesz miejsce pracy jak każdy barber w salonie: narzędzia, produkty, porządek." },
-      { "n": "02", "title": "Konsultacja", "text": "Rozmawiasz z klientem, oglądasz włosy i kształt głowy, dobierasz technikę." },
-      { "n": "03", "title": "Usługa", "text": "Strzyżesz klienta salonu. Obserwujemy, podpowiadamy, korygujemy." },
-      { "n": "04", "title": "Pożegnanie", "text": "Kończysz tak, żeby klient wrócił i polecił Cię dalej." }
+      {
+        "n": "01",
+        "title": "Stanowisko",
+        "text": "Przygotowujesz miejsce pracy jak każdy barber w salonie: narzędzia, produkty, porządek."
+      },
+      {
+        "n": "02",
+        "title": "Konsultacja",
+        "text": "Rozmawiasz z klientem, oglądasz włosy i kształt głowy, dobierasz technikę."
+      },
+      {
+        "n": "03",
+        "title": "Usługa",
+        "text": "Strzyżesz klienta salonu. Obserwujemy, podpowiadamy, korygujemy."
+      },
+      {
+        "n": "04",
+        "title": "Pożegnanie",
+        "text": "Kończysz tak, żeby klient wrócił i polecił Cię dalej."
+      }
     ]
   },
   "strip": [
-    { "img": "dlonie-maszynka", "alt": "Dłonie barbera prowadzą maszynkę i grzebień po karku klienta", "caption": "Praca z prawdziwym klientem, nie z główką treningową." },
-    { "img": "fotel-posadzka", "alt": "Fotel barberski na posadzce w gwiazdy w Barber Shopie Old Town", "caption": "Posadzka przy Oświęcimskiej 1. Stąd gwiazdka na tej stronie." },
-    { "img": "basia-golenie", "alt": "Basia goli klienta brzytwą przy fotelu", "caption": "Golenie brzytwą, konsultacja, pielęgnacja brody: cały zakres usług salonu." }
+    {
+      "img": "dlonie-maszynka",
+      "alt": "Dłonie barbera prowadzą maszynkę i grzebień po karku klienta",
+      "caption": "Praca z prawdziwym klientem, pod okiem prowadzącego."
+    },
+    {
+      "img": "fotel-posadzka",
+      "alt": "Fotel barberski na posadzce w gwiazdy w Barber Shopie Old Town",
+      "caption": "Posadzka w salonie przy Oświęcimskiej 1."
+    },
+    {
+      "img": "basia-golenie",
+      "alt": "Basia goli klienta brzytwą przy fotelu",
+      "caption": "Golenie brzytwą, konsultacja, pielęgnacja brody: cały zakres usług salonu."
+    }
   ],
   "history": {
-    "intro": "Przez wszystkie te lata pracowaliśmy z tysiącami klientów. To właśnie oni nauczyli nas, że dobry barber nie pracuje według jednego schematu.",
+    "intro": "Przez wszystkie te lata pracowaliśmy z tysiącami klientów. To właśnie oni nauczyli nas, że dobry barber nie pracuje według jednego schematu. Potrafi obserwować, analizować i dobrać odpowiednią technikę do konkretnej osoby.",
     "items": [
-      { "year": "2003", "text": "Początek przygody z fryzjerstwem." },
-      { "year": "2008", "text": "Salon Fryzjerski Metamorfoza. Działa do dziś." },
-      { "year": "2018", "text": "Barber Shop Old Town, miejsce z pasji do męskiego fryzjerstwa." },
-      { "year": "2026", "text": "Szkoła Barberingu Old Town." }
+      {
+        "year": "2003",
+        "text": "Początek przygody z fryzjerstwem."
+      },
+      {
+        "year": "2008",
+        "text": "Salon Fryzjerski Metamorfoza. Działa do dziś."
+      },
+      {
+        "year": "2018",
+        "text": "Barber Shop Old Town, miejsce z pasji do męskiego fryzjerstwa."
+      },
+      {
+        "year": "2026",
+        "text": "Szkoła Barberingu Old Town."
+      }
     ]
   },
   "team": {
@@ -58,8 +98,14 @@
     "legal": "Barber Shop Old Town, ul. Oświęcimska 1, 42-600 Tarnowskie Góry",
     "legalNote": "Pełna nazwa firmy i NIP: do uzupełnienia przed startem.",
     "links": [
-      { "label": "Polityka prywatności", "href": "/polityka-prywatnosci/" },
-      { "label": "oldtownbarber.pl", "href": "https://oldtownbarber.pl" }
+      {
+        "label": "Polityka prywatności",
+        "href": "/polityka-prywatnosci/"
+      },
+      {
+        "label": "oldtownbarber.pl",
+        "href": "https://oldtownbarber.pl"
+      }
     ]
   }
 }

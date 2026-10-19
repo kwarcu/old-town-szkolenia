@@ -10,8 +10,10 @@
   "checked": "2026-10-19",
   "note": "Pierwsza edycja rusza w listopadzie 2026. Opinie kursantów dodamy zaraz po niej.",
   "quotes": [
-    { "text": "Najlepsza, wyjątkowa, niepowtarzalna, profesjonalna!", "who": "Piotr, opinia na Booksy" },
-    { "text": "Fryzurka przed sobotnim wyjściem opanowana. Pan Nikodem zna się na robocie.", "who": "Jakub, opinia na Booksy" }
+    {
+      "text": "Najlepsza, wyjątkowa, niepowtarzalna, profesjonalna!",
+      "who": "Piotr, opinia na Booksy"
+    }
   ],
-  "_note": "Quotes are real Booksy reviews visible on 2026-10-19 (only two Polish text reviews are public). Basia may swap them for other reviews she has approved; the rating and count come from the Booksy listing."
+  "_note": "Quotes are real Booksy reviews visible on 2026-10-19. The one naming Nikodem was dropped after the round-1 design critique (he is not on the page). Basia may add other reviews she has approved; the rating and count come from the Booksy listing."
 }

@@ -18,11 +18,28 @@
   "directions": "Około 30 minut samochodem z Katowic, Bytomia i Gliwic.",
   "form": {
     "action": "",
-    "courseOptions": ["Szkolenie od podstaw", "Szkolenie 10-dniowe dla osób z doświadczeniem", "Nie wiem jeszcze"],
-    "termOptions": ["listopad 2026", "styczeń 2027", "luty 2027", "marzec 2027", "Dowolny"],
-    "expOptions": ["Brak doświadczenia", "Szkoła branżowa", "Fryzjer(ka) damska", "Po innym kursie", "Pracuję jako barber"],
+    "courseOptions": [
+      "Szkolenie od podstaw",
+      "Szkolenie 10-dniowe dla osób z doświadczeniem",
+      "Nie wiem jeszcze"
+    ],
+    "termOptions": [
+      "listopad 2026",
+      "styczeń 2027",
+      "luty 2027",
+      "marzec 2027",
+      "Dowolny"
+    ],
+    "expOptions": [
+      "Brak doświadczenia",
+      "Szkoła branżowa",
+      "Fryzjer(ka) damska",
+      "Po innym kursie",
+      "Pracuję jako barber"
+    ],
     "submit": "Wyślij zapytanie",
     "rodo": "Zgadzam się na przetwarzanie moich danych w celu odpowiedzi na zapytanie.",
-    "thanks": "Dziękujemy. Odezwiemy się w ciągu jednego dnia roboczego."
+    "thanks": "Dziękujemy. Odezwiemy się w ciągu jednego dnia roboczego.",
+    "courseLabel": "Które szkolenie"
   }
 }
