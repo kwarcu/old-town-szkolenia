@@ -45,8 +45,8 @@ Cloudflare Pages is the alternative with the same build (`npm run build`, output
 
 | | Requests | First-view transfer |
 |---|---|---|
-| Mobile 390 px, 3× | 16 | ~324 kB |
-| Desktop 1440 px | 21 | ~483 kB |
+| Mobile 390 px, 3× | 17 | ~480 kB (the lazy strip photo is fetched early because the page got shorter) |
+| Desktop 1440 px | 21 | ~480 kB |
 
 PRD §9 budget is 1.5 MB. Fonts: six Barlow/Big Shoulders woff2 files, ~20 kB each. No console errors, no horizontal overflow at 390 or 1440.
 
