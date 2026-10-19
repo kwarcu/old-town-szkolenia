@@ -1,0 +1,22 @@
+{
+  "name": "szkola-barberingu-old-town",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "screens": "node scripts/screenshots.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource/barlow": "^5.3.0",
+    "@fontsource/big-shoulders-display": "^5.3.0",
+    "astro": "^5.14.0",
+    "sharp": "^0.34.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
+}

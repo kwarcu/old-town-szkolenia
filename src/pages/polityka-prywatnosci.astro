@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../content/site.json';
+import contact from '../content/contact.json';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Base title={`Polityka prywatności — ${site.name}`} description="Informacja o przetwarzaniu danych osobowych osób, które piszą do Szkoły Barberingu Old Town przez formularz na stronie." noindex>
+  <main id="top">
+    <section class="wrap">
+      <div class="inner prose">
+        <h1>Polityka prywatności</h1>
+        <p class="foot">Wersja robocza. Pełna nazwa firmy, NIP i adres administratora zostaną uzupełnione przed startem strony.</p>
+        <h2>Administrator danych</h2>
+        <p>Administratorem danych jest {site.footer.legal} (dane firmy do uzupełnienia). Kontakt: {contact.email}, tel. {contact.phone}.</p>
+        <h2>Jakie dane i po co</h2>
+        <p>Przez formularz zbieramy imię, numer telefonu, adres e-mail oraz informacje, które sam wpiszesz (interesujące szkolenie, termin, doświadczenie, wiadomość). Używamy ich wyłącznie po to, żeby odpowiedzieć na Twoje zapytanie o szkolenie.</p>
+        <h2>Podstawa prawna i czas przechowywania</h2>
+        <p>Podstawą jest Twoja zgoda (art. 6 ust. 1 lit. a RODO) oraz działania przed zawarciem umowy (art. 6 ust. 1 lit. b RODO). Dane przechowujemy do zakończenia rozmowy o szkoleniu, nie dłużej niż 12 miesięcy od ostatniego kontaktu, chyba że zapiszesz się na szkolenie.</p>
+        <h2>Twoje prawa</h2>
+        <p>Masz prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przeniesienia oraz cofnięcia zgody w dowolnym momencie. Wystarczy wiadomość na {contact.email}. Masz też prawo wnieść skargę do Prezesa UODO.</p>
+        <h2>Analityka i pliki cookie</h2>
+        <p>Strona nie używa plików cookie ani narzędzi śledzących. Jeśli to się zmieni, poprosimy o zgodę i zaktualizujemy ten dokument.</p>
+        <p class="back"><a class="tlink" href={`${base}/`}>Wróć na stronę główną</a></p>
+      </div>
+    </section>
+  </main>
+</Base>

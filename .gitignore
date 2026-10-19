@@ -5,3 +5,8 @@ dist/
 .env.*
 *.log
 .cache/
+.astro/
+*.zip
+screens/
+docs/critique/
+src/assets/photo-pool/

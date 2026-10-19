@@ -1,0 +1,63 @@
+{
+  "title": "Szkolenia",
+  "lede": "Dwa formaty. Jeden dla osób bez doświadczenia, drugi dla tych, którzy już pracują i chcą pracować pewniej.",
+  "includedLabel": "W cenie obu szkoleń",
+  "included": "narzędzia, produkty, cały salon z zapleczem, kuchnia, kawa i napoje. Nie musisz mieć własnego sprzętu.",
+  "groupRule": "Startujemy od 2 osób; przy jednej osobie ustalamy termin i format indywidualnie.",
+  "items": [
+    {
+      "id": "szkolenie-od-podstaw",
+      "name": "Szkolenie od podstaw",
+      "short": "Od podstaw",
+      "flagship": true,
+      "days": 21,
+      "daysLabel": "dni szkoleniowych",
+      "cohorts": [
+        { "label": "listopad 2026", "startDate": "2026-11" },
+        { "label": "styczeń 2027", "startDate": "2027-01" }
+      ],
+      "group": "2–3 osoby",
+      "forWhom": "Dla osób bez doświadczenia, które chcą poznać zawód takim, jaki jest naprawdę.",
+      "personas": ["od zera", "zmiana zawodu"],
+      "learn": [
+        "Wszystkie najważniejsze techniki strzyżenia i kiedy po nie sięgać",
+        "Dobór fryzury do włosów, kształtu głowy i charakteru klienta",
+        "Konsultacja, rozmowa i obsługa od wejścia do pożegnania",
+        "Praca z prawdziwymi klientami i barber shop od środka"
+      ],
+      "certificate": "Certyfikat ukończenia szkolenia Barber od podstaw",
+      "priceLabel": "Cena startowa",
+      "price": "10 000 zł",
+      "priceValue": 10000,
+      "deposit": "zaliczka 15 % (1 500 zł) przy zapisie",
+      "description": "21-dniowe szkolenie barberskie od podstaw w działającym Barber Shopie Old Town w Tarnowskich Górach. Grupa 2–3 osoby, praca z prawdziwymi klientami, wszystkie narzędzia w cenie, certyfikat ukończenia."
+    },
+    {
+      "id": "szkolenie-10-dniowe",
+      "name": "Szkolenie 10-dniowe dla osób z doświadczeniem",
+      "short": "Dla doświadczonych",
+      "flagship": false,
+      "days": 10,
+      "daysLabel": "dni szkoleniowych",
+      "cohorts": [
+        { "label": "luty 2027", "startDate": "2027-02" },
+        { "label": "marzec 2027", "startDate": "2027-03" }
+      ],
+      "group": "2–3 osoby",
+      "forWhom": "Dla osób po szkole branżowej, fryzjerek i fryzjerów damskich oraz po innych kursach, którym brakuje pewności przy fotelu.",
+      "personas": ["po szkole branżowej", "fryzjerka damska", "po innym kursie"],
+      "learn": [
+        "Nie zaczynamy od podstaw: skupiamy się na tym, czego Ci brakuje",
+        "Szybsza, pewniejsza i bardziej świadoma praca",
+        "Analiza włosów i kształtu głowy, dobór rozwiązań do klienta",
+        "Detale, które odróżniają usługę poprawną od usługi na najwyższym poziomie"
+      ],
+      "certificate": "Certyfikat ukończenia szkolenia",
+      "priceLabel": "Cena",
+      "price": "Po rozmowie",
+      "priceValue": null,
+      "deposit": "zakres dopasowujemy do Twojego doświadczenia",
+      "description": "10-dniowe szkolenie barberskie dla osób z doświadczeniem: po szkole branżowej, fryzjerów damskich i po innych kursach. Działający barber shop w Tarnowskich Górach, grupa 2–3 osoby, praca z prawdziwymi klientami."
+    }
+  ]
+}

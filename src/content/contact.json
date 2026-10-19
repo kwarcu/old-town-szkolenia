@@ -1,0 +1,28 @@
+{
+  "title": "Kontakt",
+  "intro": "Napisz, kim jesteś i które szkolenie Cię interesuje. Odpowiadamy w ciągu jednego dnia roboczego.",
+  "phone": "725 404 010",
+  "phoneHref": "tel:+48725404010",
+  "phoneE164": "+48725404010",
+  "email": "szkolenia@szkoleniebarber.pl",
+  "emailPending": true,
+  "address": {
+    "name": "Barber Shop Old Town",
+    "street": "ul. Oświęcimska 1",
+    "postal": "42-600",
+    "city": "Tarnowskie Góry",
+    "region": "śląskie",
+    "country": "PL",
+    "mapUrl": "https://maps.google.com/?q=Barber+Shop+Old+Town+Oświęcimska+1+Tarnowskie+Góry"
+  },
+  "directions": "Około 30 minut samochodem z Katowic, Bytomia i Gliwic.",
+  "form": {
+    "action": "",
+    "courseOptions": ["Szkolenie od podstaw", "Szkolenie 10-dniowe dla osób z doświadczeniem", "Nie wiem jeszcze"],
+    "termOptions": ["listopad 2026", "styczeń 2027", "luty 2027", "marzec 2027", "Dowolny"],
+    "expOptions": ["Brak doświadczenia", "Szkoła branżowa", "Fryzjer(ka) damska", "Po innym kursie", "Pracuję jako barber"],
+    "submit": "Wyślij zapytanie",
+    "rodo": "Zgadzam się na przetwarzanie moich danych w celu odpowiedzi na zapytanie.",
+    "thanks": "Dziękujemy. Odezwiemy się w ciągu jednego dnia roboczego."
+  }
+}

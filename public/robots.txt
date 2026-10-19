@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# AI crawlers are welcome: being cited is the goal (PRD §8.5).
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://szkoleniebarber.pl/sitemap-index.xml

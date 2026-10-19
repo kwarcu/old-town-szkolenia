@@ -1,0 +1,225 @@
+---
+import Base from '../layouts/Base.astro';
+import { Image, getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import site from '../content/site.json';
+import courses from '../content/courses.json';
+import team from '../content/team.json';
+import faq from '../content/faq.json';
+import contact from '../content/contact.json';
+import reviews from '../content/reviews.json';
+
+/* lazy glob: only the photographs that are actually used end up in dist/ */
+const photos = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/*.jpg');
+const photo = async (name: string) => {
+  const load = photos[`../assets/photos/${name}.jpg`];
+  if (!load) throw new Error(`Missing photo: ${name}`);
+  return (await load()).default;
+};
+const strip = await Promise.all(site.strip.map(async (s) => ({ ...s, src: await photo(s.img) })));
+const trainers = await Promise.all(team.map(async (t) => ({ ...t, src: await photo(t.img) })));
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const heroImg = await photo('hero-kuba-strzyze');
+const og = await getImage({ src: heroImg, width: 1200, height: 630, format: 'jpg' });
+
+/* keeps "10 000 zł", "2–3 osoby", "15 %" on one line */
+const nb = (s: string) => s.replace(/(\d) (?=\d)/g, '$1 ').replace(/(\d) (?=zł|%|osob|dni)/g, '$1 ');
+
+const a = contact.address;
+const addressLd = { '@type': 'PostalAddress', streetAddress: a.street, postalCode: a.postal, addressLocality: a.city, addressRegion: a.region, addressCountry: a.country };
+const orgId = `${Astro.site}#szkola`;
+const personId = `${Astro.site}#basia`;
+const jsonLd = [
+  {
+    '@context': 'https://schema.org', '@type': 'EducationalOrganization', '@id': orgId,
+    name: site.name, url: Astro.site?.toString(), description: site.brief,
+    address: addressLd, telephone: contact.phoneE164,
+    parentOrganization: { '@type': 'HairSalon', name: 'Barber Shop Old Town', address: addressLd, telephone: contact.phoneE164, url: site.social.oldSite },
+    founder: { '@type': 'Person', '@id': personId, name: 'Barbara Frączek' },
+    areaServed: ['Tarnowskie Góry', 'województwo śląskie'],
+    sameAs: [site.social.instagram, site.social.booksy, site.social.oldSite],
+  },
+  { '@context': 'https://schema.org', '@type': 'Person', '@id': personId, name: 'Barbara Frączek', alternateName: 'Basia', jobTitle: 'Właścicielka, prowadzi szkolenia', worksFor: { '@id': orgId }, knowsAbout: ['barbering', 'strzyżenie męskie', 'szkolenia barberskie'] },
+  ...courses.items.map((c) => ({
+    '@context': 'https://schema.org', '@type': 'Course', name: c.name, description: c.description,
+    provider: { '@id': orgId }, url: `${Astro.site}#${c.id}`,
+    ...(c.priceValue ? { offers: { '@type': 'Offer', price: c.priceValue, priceCurrency: 'PLN', availability: 'https://schema.org/InStock', url: `${Astro.site}#kontakt` } } : {}),
+    hasCourseInstance: c.cohorts.map((k) => ({ '@type': 'CourseInstance', courseMode: 'Onsite', startDate: k.startDate, location: { '@type': 'Place', name: 'Barber Shop Old Town', address: addressLd }, instructor: team.map((t) => ({ '@type': 'Person', name: t.full })), courseWorkload: `P${c.days}D` })),
+  })),
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  { '@context': 'https://schema.org', '@type': 'WebPage', url: Astro.site?.toString(), name: site.title, dateModified: site.updated, inLanguage: 'pl-PL', isPartOf: { '@type': 'WebSite', url: Astro.site?.toString(), name: site.name } },
+];
+---
+<Base jsonLd={jsonLd} ogImage={og.src}>
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="inner-hero">
+        <div class="hero-body">
+          <p class="kicker">{site.hero.kicker}</p>
+          <h1>{site.hero.headline}</h1>
+          <p class="sub">{nb(site.hero.sub)}</p>
+          <div class="cta">
+            <a class="btn" href="#kontakt">{site.hero.ctaPrimary}</a>
+            <a class="tlink" href={contact.phoneHref}>{nb(contact.phone)}</a>
+          </div>
+        </div>
+        <figure class="hero-photo">
+          <Image src={heroImg} alt={site.hero.photoAlt} widths={[480, 800, 1200, 1600]} sizes="(min-width: 900px) 38vw, 100vw" loading="eager" fetchpriority="high" />
+        </figure>
+      </div>
+    </section>
+
+    <div class="tileband on-ink" aria-hidden="true"></div>
+    <section class="courses slab wrap reveal" id="szkolenia">
+      <div class="inner">
+        <div class="head set">
+          <h2>{courses.title}</h2>
+          <p class="lede">{nb(site.brief)}</p>
+        </div>
+        <div class="set">
+          <div class="list">
+            {courses.items.map((c) => (
+              <article class="course" id={c.id}>
+                <div class="when"><span class="star"></span>{c.flagship ? 'Najbliższy start: ' : 'Start: '}{c.cohorts[0].label}</div>
+                <div class="head-row"><b class="num">{c.days}</b><span class="label">{c.daysLabel}</span></div>
+                <h3>{c.short}</h3>
+                <p class="for">{nb(c.forWhom)}</p>
+                <ul>
+                  {c.learn.slice(0, 3).map((l) => <li>{nb(l)}</li>)}
+                  <li class="who"><b>Dla kogo:</b> {c.personas.join(', ')}</li>
+                </ul>
+                <p class="incl">{c.certificate}. Terminy: {c.cohorts.map((k) => k.label).join(', ')}.</p>
+                <div class="price"><span class="label">{c.priceLabel}</span><b class="val">{nb(c.price)}</b><span class="dep">{nb(c.deposit)}</span></div>
+                <div class="cta"><a class="tlink" href="#kontakt">Zapytaj o to szkolenie</a></div>
+              </article>
+            ))}
+          </div>
+          <p class="incl-all"><span class="star"></span><span><b>{courses.includedLabel}:</b> {nb(courses.included)}<span class="rule">{nb(courses.groupRule)}</span></span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="day wrap reveal" id="jak-uczymy">
+      <div class="inner">
+        <div class="head set"><h2>{site.day.title}</h2><p class="lede">{site.day.intro}</p></div>
+        <ol class="steps set">
+          {site.day.steps.map((s) => <li><span class="tag">{s.n}</span><div><h3>{s.title}</h3><p>{s.text}</p></div></li>)}
+        </ol>
+      </div>
+    </section>
+
+    <section class="trio reveal" aria-label="Salon, w którym się uczysz">
+      {strip.map((s) => (
+        <figure class="shot">
+          <Image src={s.src} alt={s.alt} widths={[480, 800, 1200]} sizes="(min-width: 900px) 33vw, 100vw" loading="lazy" />
+          <figcaption>{nb(s.caption)}</figcaption>
+        </figure>
+      ))}
+    </section>
+
+    <section class="team wrap reveal" id="kto-uczy">
+      <div class="inner">
+        <div class="head set"><h2>{site.team.title}</h2><p class="lede">{site.team.note}</p></div>
+        <div class="grid set">
+          {trainers.map((t) => (
+            <div class="trainer" id={t.id}>
+              <figure class="shot"><Image src={t.src} alt={t.alt} widths={[480, 800, 1200]} sizes="(min-width: 900px) 40vw, 50vw" loading="lazy" /></figure>
+              <h3>{t.name}</h3>
+              <div class="role">{t.role}</div>
+              <p class="bio">{nb(t.bio)}</p>
+              <blockquote><p>{t.quote}</p></blockquote>
+            </div>
+          ))}
+        </div>
+        <p class="history-intro set">{nb(site.history.intro)}</p>
+        <ol class="years set">
+          {site.history.items.map((h) => <li><b>{h.year}</b><p>{h.text}</p></li>)}
+        </ol>
+      </div>
+    </section>
+
+    <section class="proof wrap reveal" id="opinie">
+      <div class="inner">
+        <div class="head set"><h2>{reviews.title}</h2><p class="lede">{reviews.lede}</p></div>
+        <div class="split">
+          <div class="set">
+            <div class="figures">
+              <div><b>{reviews.rating}</b><span class="label">ocena salonu na {reviews.source}</span></div>
+              <div><b>{nb(reviews.count)}</b><span class="label">{reviews.countLabel}</span></div>
+            </div>
+            <p class="foot" style="margin-top:22px">{reviews.note}<br><a class="tlink" href={site.social.booksy} target="_blank" rel="noopener">Zobacz opinie na Booksy</a></p>
+          </div>
+          <div class="set">
+            <blockquote class="lead-quote"><q>{reviews.quotes[0].text}</q><cite>{reviews.quotes[0].who}</cite></blockquote>
+            <ul class="reviews">
+              {reviews.quotes.slice(1).map((r) => <li><q>{r.text}</q><cite>{r.who}</cite></li>)}
+            </ul>
+            <p class="foot"><a class="tlink" href={site.social.instagram} target="_blank" rel="noopener">{site.social.instagramLabel}</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq wrap reveal" id="faq">
+      <div class="inner">
+        <div class="head set"><h2>{site.faqTitle}</h2><p class="lede">{site.faqLede}</p></div>
+        <div class="list set">
+          {faq.map((f, i) => (
+            <details open={i === 0}>
+              <summary>{f.q}</summary>
+              <p>{nb(f.a)}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="contact wrap reveal" id="kontakt">
+      <div class="inner"><div class="split">
+        <div class="head set">
+          <h2>{contact.title}</h2>
+          <address>
+            <a class="phone" href={contact.phoneHref}>{nb(contact.phone)}</a>
+            <a href={`mailto:${contact.email}`}>{contact.email}</a>
+            <span>{a.name}, {a.street}, {nb(a.postal)} {a.city}</span>
+            <a class="tlink" href={a.mapUrl} target="_blank" rel="noopener">Pokaż na mapie</a>
+            <span class="muted">{contact.directions}</span>
+          </address>
+        </div>
+        <form class="set" id="form" method="post" action={contact.form.action || undefined} novalidate>
+          <p class="lede">{contact.intro}</p>
+          <div class="f"><label for="imie">Imię</label><input id="imie" name="imie" required autocomplete="given-name"></div>
+          <div class="f"><label for="tel">Telefon</label><input id="tel" name="tel" type="tel" required autocomplete="tel"></div>
+          <div class="f"><label for="email">E-mail</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          <div class="f"><label for="kurs">Interesujące szkolenie</label><select id="kurs" name="kurs">{contact.form.courseOptions.map((o) => <option>{o}</option>)}</select></div>
+          <details class="more wide"><summary>Dodaj szczegóły (opcjonalnie)</summary>
+            <div class="f"><label for="termin">Preferowany termin</label><select id="termin" name="termin">{contact.form.termOptions.map((o) => <option>{o}</option>)}</select></div>
+            <div class="f"><label for="dosw">Doświadczenie</label><select id="dosw" name="dosw">{contact.form.expOptions.map((o) => <option>{o}</option>)}</select></div>
+            <div class="f wide"><label for="msg">Wiadomość</label><textarea id="msg" name="msg"></textarea></div>
+          </details>
+          <div class="hp" aria-hidden="true"><label>Firma <input name="firma" tabindex="-1" autocomplete="off"></label></div>
+          <div class="f check"><input id="rodo" name="rodo" type="checkbox" required><label for="rodo">{contact.form.rodo} <a class="inline-link tlink" href={`${base}/polityka-prywatnosci/`}>Polityka prywatności</a>.</label></div>
+          <p class="error" id="formError" hidden>Uzupełnij imię, telefon, e-mail i zgodę.</p>
+          <button class="btn" type="submit">{contact.form.submit}</button>
+        </form>
+      </div></div>
+    </section>
+  </main>
+
+  <div class="bar" id="bar"><a class="btn" href="#kontakt">{site.hero.ctaPrimary}</a><a class="call" href={contact.phoneHref}>{site.hero.ctaCall}</a></div>
+
+  <script define:vars={{ thanks: contact.form.thanks }}>
+    const form = document.getElementById('form');
+    const err = document.getElementById('formError');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const ok = ['imie', 'tel', 'email'].every((id) => form.elements[id].value.trim()) && form.elements['rodo'].checked;
+      err.hidden = ok;
+      if (!ok) return;
+      /* alpha: no backend wired yet; the thank-you state is shown in place */
+      form.innerHTML = '<p class="thanks">' + thanks + '</p>';
+    });
+    const bar = document.getElementById('bar');
+    new IntersectionObserver(([en]) => bar.classList.toggle('on', !en.isIntersecting && en.boundingClientRect.top < 0), { threshold: 0 }).observe(document.getElementById('hero'));
+  </script>
+</Base>

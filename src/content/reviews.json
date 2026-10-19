@@ -1,0 +1,17 @@
+{
+  "title": "Opinie o salonie",
+  "lede": "Szkoła jest nowa. Salon, w którym uczysz się na żywym kliencie, ma za sobą ponad osiem lat i tysiące wizyt.",
+  "rating": "5,0",
+  "ratingValue": 5.0,
+  "count": "1 485",
+  "countValue": 1485,
+  "countLabel": "opinii klientów salonu",
+  "source": "Booksy",
+  "checked": "2026-10-19",
+  "note": "Pierwsza edycja rusza w listopadzie 2026. Opinie kursantów dodamy zaraz po niej.",
+  "quotes": [
+    { "text": "Najlepsza, wyjątkowa, niepowtarzalna, profesjonalna!", "who": "Piotr, opinia na Booksy" },
+    { "text": "Fryzurka przed sobotnim wyjściem opanowana. Pan Nikodem zna się na robocie.", "who": "Jakub, opinia na Booksy" }
+  ],
+  "_note": "Quotes are real Booksy reviews visible on 2026-10-19 (only two Polish text reviews are public). Basia may swap them for other reviews she has approved; the rating and count come from the Booksy listing."
+}
