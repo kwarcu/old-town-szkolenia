@@ -40,7 +40,7 @@ gh api -X POST repos/{owner}/old-town-szkolenia/pages -f build_type=workflow
 
 ## 4. The link for Basia
 
-`https://<owner>.github.io/old-town-szkolenia/` plus the password — works on phone and desktop. On a free GitHub account Pages needs a public repository: the page itself is then encrypted, but the source (texts, photos) is readable on github.com. With GitHub Pro the repository can stay private. Cloudflare Pages (free, private repo, optional Cloudflare Access with e-mail codes) is the alternative if that matters.
+`https://kwarcu.org/old-town-szkolenia/` plus the password (the owner's user site has the custom domain kwarcu.org, so project sites hang under it) — works on phone and desktop. On a free GitHub account Pages needs a public repository: the page itself is then encrypted, but the source (texts, photos) is readable on github.com. With GitHub Pro the repository can stay private. Cloudflare Pages (free, private repo, optional Cloudflare Access with e-mail codes) is the alternative if that matters.
 
 ## Later: the real domain
 
