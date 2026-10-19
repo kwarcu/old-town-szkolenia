@@ -2,7 +2,7 @@
   "title": "Szkolenia barberskie",
   "lede": "W Szkole Barberingu Old Town w Tarnowskich Górach prowadzimy dwa szkolenia barberskie: 21 dni od podstaw i 10 dni dla osób, które już strzygą. Oba w działającym salonie przy Oświęcimskiej 1, na prawdziwych klientach, w grupie 2–3 osób, z Basią i Kubą.",
   "includedLabel": "W cenie obu szkoleń",
-  "included": "narzędzia, produkty, cały salon z zapleczem, kuchnia, kawa i napoje. Nie musisz mieć własnego sprzętu.",
+  "included": "dni w działającym salonie, narzędzia i produkty, praca z klientami salonu od pierwszego dnia, certyfikat podpisany przez Basię i Kubę, cały salon z zapleczem, kuchnia, kawa i napoje. Własny sprzęt jest zbędny.",
   "groupRule": "Startujemy od 2 osób; przy jednej osobie ustalamy termin i format indywidualnie.",
   "items": [
     {
@@ -40,8 +40,7 @@
       "priceValue": 10000,
       "deposit": "zaliczka 15 % (1 500 zł) przy zapisie",
       "description": "21-dniowe szkolenie barberskie od podstaw w działającym Barber Shopie Old Town w Tarnowskich Górach. Grupa 2–3 osoby, praca z prawdziwymi klientami, wszystkie narzędzia w cenie, certyfikat ukończenia.",
-      "ctaLabel": "Zapytaj o kurs od podstaw",
-      "kit": "W cenie: 21 dni w działającym salonie, narzędzia i produkty, praca z klientami salonu od pierwszego dnia oraz certyfikat podpisany przez Basię i Kubę."
+      "ctaLabel": "Zapytaj o kurs od podstaw"
     },
     {
       "id": "szkolenie-10-dniowe",
