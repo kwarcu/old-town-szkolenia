@@ -8,7 +8,7 @@ import reviews from '../content/reviews.json';
 
 /* /llms.txt — the same facts as the page, generated from the same content files. */
 export const GET: APIRoute = ({ site: origin }) => {
-  const url = origin?.toString() ?? '';
+  const url = new URL(import.meta.env.BASE_URL, origin).toString();
   const a = contact.address;
   const lines = [
     `# ${site.name}`,

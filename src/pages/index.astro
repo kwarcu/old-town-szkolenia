@@ -19,6 +19,8 @@ const photo = async (name: string) => {
 const strip = await Promise.all(site.strip.map(async (s) => ({ ...s, src: await photo(s.img) })));
 const trainers = await Promise.all(team.map(async (t) => ({ ...t, src: await photo(t.img) })));
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+/* the page's own absolute URL, base path included (GitHub Pages project sites live under /<repo>/) */
+const pageUrl = new URL(import.meta.env.BASE_URL, Astro.site).toString();
 const heroImg = await photo('hero-kuba-strzyze');
 const flagship = courses.items.find((c) => c.flagship) ?? courses.items[0];
 const facts = [`${flagship.days} dni od podstaw`, flagship.group, flagship.price, `start ${flagship.cohorts[0].label}`];
@@ -29,12 +31,12 @@ const nb = (s: string) => s.replace(/(\d) (?=\d)/g, '$1 ').replace(/(\d) (?=zł
 
 const a = contact.address;
 const addressLd = { '@type': 'PostalAddress', streetAddress: a.street, postalCode: a.postal, addressLocality: a.city, addressRegion: a.region, addressCountry: a.country };
-const orgId = `${Astro.site}#szkola`;
-const personId = `${Astro.site}#basia`;
+const orgId = `${pageUrl}#szkola`;
+const personId = `${pageUrl}#basia`;
 const jsonLd = [
   {
     '@context': 'https://schema.org', '@type': 'EducationalOrganization', '@id': orgId,
-    name: site.name, url: Astro.site?.toString(), description: site.brief,
+    name: site.name, url: pageUrl, description: site.brief,
     address: addressLd, telephone: contact.phoneE164,
     parentOrganization: { '@type': 'HairSalon', name: 'Barber Shop Old Town', address: addressLd, telephone: contact.phoneE164, url: site.social.oldSite },
     founder: { '@type': 'Person', '@id': personId, name: 'Barbara Frączek' },
@@ -44,12 +46,12 @@ const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Person', '@id': personId, name: 'Barbara Frączek', alternateName: 'Basia', jobTitle: 'Właścicielka, prowadzi szkolenia', worksFor: { '@id': orgId }, knowsAbout: ['barbering', 'strzyżenie męskie', 'szkolenia barberskie'] },
   ...courses.items.map((c) => ({
     '@context': 'https://schema.org', '@type': 'Course', name: c.name, description: c.description,
-    provider: { '@id': orgId }, url: `${Astro.site}#${c.id}`,
-    ...(c.priceValue ? { offers: { '@type': 'Offer', price: c.priceValue, priceCurrency: 'PLN', availability: 'https://schema.org/InStock', url: `${Astro.site}#kontakt` } } : {}),
+    provider: { '@id': orgId }, url: `${pageUrl}#${c.id}`,
+    ...(c.priceValue ? { offers: { '@type': 'Offer', price: c.priceValue, priceCurrency: 'PLN', availability: 'https://schema.org/InStock', url: `${pageUrl}#kontakt` } } : {}),
     hasCourseInstance: c.cohorts.map((k) => ({ '@type': 'CourseInstance', courseMode: 'Onsite', startDate: k.startDate, location: { '@type': 'Place', name: 'Barber Shop Old Town', address: addressLd }, instructor: team.map((t) => ({ '@type': 'Person', name: t.full })), courseWorkload: `P${c.days}D` })),
   })),
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
-  { '@context': 'https://schema.org', '@type': 'WebPage', url: Astro.site?.toString(), name: site.title, dateModified: site.updated, inLanguage: 'pl-PL', isPartOf: { '@type': 'WebSite', url: Astro.site?.toString(), name: site.name } },
+  { '@context': 'https://schema.org', '@type': 'WebPage', url: pageUrl, name: site.title, dateModified: site.updated, inLanguage: 'pl-PL', isPartOf: { '@type': 'WebSite', url: pageUrl, name: site.name } },
 ];
 ---
 <Base jsonLd={jsonLd} ogImage={og.src}>
