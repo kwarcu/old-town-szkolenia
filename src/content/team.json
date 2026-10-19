@@ -7,7 +7,7 @@
     "bio": "Fryzjerka od 2003 roku. Założyła Salon Fryzjerski Metamorfoza (2008) i Barber Shop Old Town (2018). Codziennie pracuje za fotelem.",
     "img": "basia-portret",
     "alt": "Basia, Barbara Frączek, właścicielka Barber Shopu Old Town, w salonie przy Oświęcimskiej 1",
-    "quote": "Wychodzisz stąd i mówisz sobie: „Jestem gotowy”."
+    "quote": "Wychodzisz stąd i mówisz sobie: jestem gotowy."
   },
   {
     "id": "kuba",
@@ -17,6 +17,6 @@
     "bio": "Barber w Old Town. Prowadzi szkolenia razem z Basią i razem z nią podpisuje certyfikat.",
     "img": "kuba-portret",
     "alt": "Kuba, barber i prowadzący szkolenia w Barber Shopie Old Town",
-    "quote": "Uczymy myślenia, świadomej pracy i profesjonalizmu."
+    "quote": null
   }
 ]

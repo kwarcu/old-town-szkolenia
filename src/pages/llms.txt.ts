@@ -24,7 +24,7 @@ export const GET: APIRoute = ({ site: origin }) => {
     `- ${courses.includedLabel}: ${courses.included} ${courses.groupRule}`,
     '',
     '## Jak wygląda szkolenie',
-    `${site.day.intro}`,
+    `${site.day.introLong ?? site.day.intro}`,
     ...site.day.steps.map((s) => `- ${s.n} ${s.title}: ${s.text}`),
     '',
     '## Kto uczy',

@@ -24,7 +24,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--text); font-family: var(--sans);
-  font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: clip; position: relative; }
+  font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: clip; position: relative; }
 body::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: .4; mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .45 0 0 0 0 .43 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E"); }
 main, header, footer { position: relative; z-index: 1; }
@@ -92,9 +92,14 @@ header.site.open nav.top a { padding: 11px 0; border-bottom: 1px solid var(--rul
 .hero p.sub { margin-top: 20px; max-width: 34ch; }
 .hero .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; margin-top: 26px; }
 .hero .cta .btn { padding: 0 18px; font-size: 19px; }
-.hero .facts { margin: 20px 0 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); display: grid; grid-template-columns: 1fr 1fr; font-family: var(--cond); font-weight: 700; font-size: 17px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
-.hero .facts li { padding: 10px 0 8px; border-bottom: 1px solid var(--rule); }
-.hero .facts li:nth-child(even) { padding-left: 14px; border-left: 1px solid var(--rule); }
+.facts { margin: 20px 0 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); display: grid; grid-template-columns: 1fr 1fr; font-family: var(--cond); font-weight: 700; font-size: 17px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+.facts li { padding: 10px 0 8px; border-bottom: 1px solid var(--rule); }
+.facts li:nth-child(even) { padding-left: 14px; border-left: 1px solid var(--rule); }
+.proof .facts { grid-template-columns: repeat(3, auto); justify-content: start; margin-top: 0; }
+.proof .facts li { border-bottom: 0; padding-right: 16px; }
+.proof .facts li:nth-child(even) { padding-left: 16px; }
+.proof .facts li:nth-child(3) { padding-left: 16px; border-left: 1px solid var(--rule); }
+.proof .foot { margin-top: 16px; }
 .hero p.sub { margin-top: 18px; font-size: 16px; color: var(--muted); }
 
 /* ---------- Szkolenia: two ruled columns on the paper, the price set as an ink plate ---------- */
@@ -102,11 +107,11 @@ header.site.open nav.top a { padding: 11px 0; border-bottom: 1px solid var(--rul
 .courses .list { margin-top: 30px; border-top: 2px solid var(--ink); }
 .course { padding: 22px 0 28px; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; }
 .course .when { font-family: var(--sans); font-weight: 600; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-.course .head-row { display: flex; align-items: baseline; gap: 10px; }
-.course .head-row .label { font-size: 16px; color: var(--ink); }
-.course .num { font-family: var(--cond); font-weight: 800; font-size: 54px; line-height: .82; letter-spacing: .005em; color: var(--ink); }
-.course h3 { margin-top: 14px; font-size: 27px; }
-.course p.for { margin-top: 12px; font-size: 17px; font-weight: 500; line-height: 1.4; color: var(--ink); }
+.course .head-row { display: flex; align-items: baseline; gap: 10px; line-height: 1; }
+.course .head-row .label { font-family: var(--cond); font-weight: 700; font-size: 20px; letter-spacing: .04em; color: var(--ink); }
+.course .num { font-family: var(--cond); font-weight: 800; font-size: 54px; line-height: 1; letter-spacing: .005em; color: var(--ink); }
+.course h3 { margin-top: 10px; font-size: 27px; }
+.course p.for { margin-top: 12px; font-size: 16px; line-height: 1.5; color: var(--text); }
 .course ul { margin: 14px 0 0; padding: 0; list-style: none; }
 .course li { position: relative; padding: 5px 0 5px 22px; font-size: 16px; color: var(--text); }
 .course li::before { content: ""; position: absolute; left: 2px; top: 15px; width: 10px; height: 2px; background: var(--ink); }
@@ -124,7 +129,7 @@ header.site.open nav.top a { padding: 11px 0; border-bottom: 1px solid var(--rul
 .course .price .kit { display: block; margin-top: 10px; padding-top: 10px; border-top: 1px solid #4a4a47; font-size: 15px; color: #fff; }
 .course .cta { margin-top: 16px; }
 .course .cta .tlink { font-size: 15px; font-weight: 600; letter-spacing: .04em; border-bottom-width: 1px; }
-.incl-all { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 16px; color: var(--text); max-width: 60ch; }
+.incl-all { margin-top: 20px; font-size: 16px; color: var(--text); max-width: 60ch; }
 .incl-all b { font-weight: 600; color: var(--ink); }
 
 /* ---------- Jak wygląda szkolenie: a plain numbered list ---------- */
@@ -144,7 +149,10 @@ header.site.open nav.top a { padding: 11px 0; border-bottom: 1px solid var(--rul
 .team .head .lede { max-width: 46ch; }
 .team .grid { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 26px; }
 .trainer .shot img { aspect-ratio: 4 / 5; }
-.trainer .shot { max-width: 300px; }
+.team .lead-quote { margin: 30px 0 0; }
+.team .lead-quote q { quotes: "\201E" "\201D"; font-size: 22px; line-height: 1.35; color: var(--ink); font-weight: 500; }
+.team .lead-quote cite { display: block; margin-top: 8px; font-style: normal; font-size: 15px; color: var(--muted); }
+.team .after h3 { font-size: 22px; margin-bottom: 10px; }
 .trainer h3 { margin: 16px 0 0; font-size: 26px; }
 .trainer .role { margin: 6px 0 0; font-size: 16px; color: var(--muted); }
 .trainer p.bio { margin: 9px 0 0; font-size: 16px; }
@@ -153,7 +161,8 @@ header.site.open nav.top a { padding: 11px 0; border-bottom: 1px solid var(--rul
 .years { list-style: none; margin: 18px 0 0; padding: 0; border-top: 1px solid var(--rule); }
 .years li { display: grid; grid-template-columns: 56px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: 16px; }
 .years b { font-family: var(--cond); font-weight: 700; font-size: 20px; color: var(--ink); }
-.history-intro { margin-top: 34px; font-size: 18px; line-height: 1.45; max-width: 52ch; color: var(--text); }
+.team .after { margin-top: 34px; }
+.history-intro { font-size: 16px; line-height: 1.5; max-width: 52ch; color: var(--text); }
 
 /* ---------- Opinie ---------- */
 .proof .foot { margin-top: 0; font-size: 16px; }
@@ -269,16 +278,17 @@ footer.site .stamp { color: #9a9c99; font-size: 15px; }
 
   .hero { padding-top: 0; overflow: hidden; padding-bottom: 72px; }
   .hero .inner-hero { display: grid; grid-template-columns: minmax(0, 1fr) 38vw; column-gap: 56px; align-items: stretch;
-    padding-left: max(var(--g), calc((100vw - 1280px) / 2 + var(--g))); min-height: 640px; padding-top: 96px; }
-  .hero-photo { order: 0; height: auto; background: transparent; position: relative; margin-top: -96px; }
-  .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 42% 44%; }
+    padding-left: max(var(--g), calc((100vw - 1280px) / 2 + var(--g))); min-height: 600px; padding-top: 56px; }
+  .hero-photo { order: 0; height: auto; background: transparent; position: relative; margin-top: -56px; }
+  .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 44%; }
   .hero-body { padding: 0; }
   .hero .kicker { font-size: 17px; margin-bottom: 22px; }
   .hero h1 { font-size: clamp(70px, 7.3vw, 116px); line-height: .94; letter-spacing: .012em; }
   .hero .facts { font-size: 18px; margin-top: 28px; grid-template-columns: repeat(4, auto); justify-content: start; column-gap: 0; }
+  .proof .facts { font-size: 18px; }
   .hero p.sub { font-size: 18px; margin-top: 22px; max-width: 36ch; }
   .hero .facts li { border-bottom: 0; padding: 12px 18px 0 0; }
-  .hero .facts li:nth-child(n+2) { border-left: 1px solid var(--rule); padding-left: 18px; }
+  .facts li:nth-child(n+2) { border-left: 1px solid var(--rule); padding-left: 18px; }
   .hero p.sub { font-size: 20px; max-width: 32ch; margin-top: 30px; }
   .hero .cta { margin-top: 30px; margin-bottom: 8px; }
 
@@ -286,7 +296,7 @@ footer.site .stamp { color: #9a9c99; font-size: 15px; }
   .course { padding: 28px 0 32px; }
   .course + .course { border-left: 1px solid var(--rule); padding-left: 60px; margin-left: -60px; }
   .course .num { font-size: 76px; }
-  .course .head-row .label { font-size: 18px; }
+  .course .head-row .label { font-size: 22px; }
   .course h3 { font-size: 34px; min-height: 2.1em; }
   .course p.for { font-size: 19px; min-height: 4.2em; }
   .course .price { margin-top: auto; padding: 20px 22px 22px; }
@@ -303,12 +313,14 @@ footer.site .stamp { color: #9a9c99; font-size: 15px; }
   .trio img { aspect-ratio: auto; height: 480px; }
   .trio figcaption { flex: 1; padding: 12px 18px 0; }
 
-  .team .grid { margin-top: 34px; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; }
-  .trainer .shot { max-width: 320px; }
+  .team .grid { margin-top: 34px; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .trainer .shot img { aspect-ratio: 3 / 2; object-position: 50% 20%; }
+  .team .lead-quote { max-width: 60ch; }
+  .team .lead-quote q { font-size: 28px; }
   .trainer h3 { font-size: 36px; }
   .trainer p.bio { font-size: 17px; }
   .team .after { display: grid; grid-template-columns: 5fr 7fr; column-gap: 60px; margin-top: 44px; align-items: start; }
-  .history-intro { font-size: 19px; margin-top: 0; }
+  .history-intro { font-size: 17px; }
   .years { margin-top: 0; }
   .years li { grid-template-columns: 70px 1fr; }
 

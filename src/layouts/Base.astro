@@ -75,7 +75,7 @@ const withBase = (href: string) => (href.startsWith('/') ? `${base}${href}` : hr
       <div>
         <div>{site.name} · {site.by}</div>
         <div>{site.footer.legal}</div>
-        <div class="stamp">Stan na {site.updatedLabel}. Startujemy od 2 osób; przy jednej ustalamy termin indywidualnie.</div>
+        <div class="stamp">Aktualizacja: {site.updatedLabel}</div>
       </div>
       <nav aria-label="Stopka">
         {site.footer.links.map((l) => <a href={withBase(l.href)}>{l.label}</a>)}

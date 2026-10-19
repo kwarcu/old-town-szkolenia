@@ -87,11 +87,9 @@ const jsonLd = [
                 <p class="for">{nb(c.forWhom)}</p>
                 <ul>
                   {c.learn.slice(0, 3).map((l) => <li>{nb(l)}</li>)}
-                  <li class="who"><b>Dla kogo:</b> {c.personas.join(', ')}</li>
                 </ul>
                 <p class="incl">{c.certificate}. Terminy: {c.cohorts.map((k) => k.label).join(', ')}.</p>
                 <div class="price"><span class="label">{c.priceLabel}</span><b class="val">{nb(c.price)}</b><span class="dep">{nb(c.deposit)}</span>{c.kit && <span class="kit">{nb(c.kit)}</span>}</div>
-                <div class="cta"><a class="tlink" href="#kontakt">{c.ctaLabel}</a></div>
               </article>
             ))}
           </div>
@@ -128,12 +126,12 @@ const jsonLd = [
               <h3>{t.name}</h3>
               <div class="role">{t.full !== t.name && <span>{t.full} · </span>}{t.role}</div>
               <p class="bio">{nb(t.bio)}</p>
-              {t.quote && <blockquote><p>{t.quote}</p></blockquote>}
             </div>
           ))}
         </div>
+        <blockquote class="lead-quote set"><q>{trainers[0].quote}</q><cite>{trainers[0].name}</cite></blockquote>
         <div class="after set">
-          <p class="history-intro">{nb(site.history.intro)}</p>
+          <div><h3>{site.history.title}</h3><p class="history-intro">{nb(site.history.intro)}</p></div>
           <ol class="years">
             {site.history.items.map((h) => <li><b>{h.year}</b><span>{h.text}</span></li>)}
           </ol>
@@ -146,6 +144,7 @@ const jsonLd = [
         <div class="head set"><h2>{reviews.title}</h2><p class="lede">{reviews.lede}</p></div>
         <div class="split">
           <div class="set">
+            <ul class="facts" aria-label="Ocena salonu"><li>{reviews.rating} ocena</li><li>{nb(reviews.count)} opinii</li><li>{reviews.source}</li></ul>
             <p class="foot">{reviews.note}<br><a class="tlink" href={site.social.booksy} target="_blank" rel="noopener">Zobacz opinie na Booksy</a></p>
           </div>
           {reviews.quotes.length > 0 && <div class="set">

@@ -1,6 +1,6 @@
 {
   "title": "Szkolenia barberskie",
-  "lede": "W Szkole Barberingu Old Town w Tarnowskich Górach prowadzimy dwa szkolenia barberskie: 21 dni od podstaw i 10 dni dla osób, które już strzygą, ale brakuje im pewności. Oba odbywają się w naszym salonie przy Oświęcimskiej 1, na prawdziwych klientach, w grupie 2–3 osób, z Basią i Kubą, którzy codziennie pracują za fotelem.",
+  "lede": "W Szkole Barberingu Old Town w Tarnowskich Górach prowadzimy dwa szkolenia barberskie: 21 dni od podstaw i 10 dni dla osób, które już strzygą. Oba w działającym salonie przy Oświęcimskiej 1, na prawdziwych klientach, w grupie 2–3 osób, z Basią i Kubą.",
   "includedLabel": "W cenie obu szkoleń",
   "included": "narzędzia, produkty, cały salon z zapleczem, kuchnia, kawa i napoje. Nie musisz mieć własnego sprzętu.",
   "groupRule": "Startujemy od 2 osób; przy jednej osobie ustalamy termin i format indywidualnie.",
@@ -61,7 +61,7 @@
         }
       ],
       "group": "2–3 osoby",
-      "forWhom": "10-dniowe szkolenie barberskie dla osób po szkole branżowej, po innym kursie i dla fryzjerek damskich, które chcą pewnie strzyc mężczyzn. Czasem wystarczy dobry kierunek, by zrobić ogromny krok naprzód.",
+      "forWhom": "10-dniowe szkolenie barberskie dla osób po szkole branżowej, po innym kursie i dla fryzjerek damskich, które chcą pewnie strzyc mężczyzn.",
       "personas": [
         "po szkole branżowej",
         "fryzjerka damska",
@@ -69,7 +69,7 @@
       ],
       "learn": [
         "Zaczynamy od tego, czego Ci brakuje",
-        "Wspólnie znajdziemy to, co wymaga dopracowania, i pokażemy Ci, jak pracować szybciej, pewniej i bardziej świadomie",
+        "Pokażemy Ci, jak pracować szybciej, pewniej i bardziej świadomie",
         "Analiza włosów i kształtu głowy, dobór rozwiązań do klienta",
         "Detale, które odróżniają usługę poprawną od usługi na najwyższym poziomie"
       ],
