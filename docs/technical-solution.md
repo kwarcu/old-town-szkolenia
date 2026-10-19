@@ -41,6 +41,15 @@ Cloudflare Pages is the alternative with the same build (`npm run build`, output
 2. Bump `updated` and `updatedLabel` in `site.json` (they drive the visible "Stan na" line and `dateModified`).
 3. Commit and push to `main`; Pages rebuilds in about two minutes.
 
+## Measured on 2026-10-19 (alpha, local build)
+
+| | Requests | First-view transfer |
+|---|---|---|
+| Mobile 390 px, 3× | 16 | ~324 kB |
+| Desktop 1440 px | 21 | ~483 kB |
+
+PRD §9 budget is 1.5 MB. Fonts: six Barlow/Big Shoulders woff2 files, ~20 kB each. No console errors, no horizontal overflow at 390 or 1440.
+
 ## Open before launch
 
 - Form backend and the school's mailbox (PRD FR-2, Appendix A 13).
