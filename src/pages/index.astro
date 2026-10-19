@@ -8,6 +8,7 @@ import team from '../content/team.json';
 import faq from '../content/faq.json';
 import contact from '../content/contact.json';
 import reviews from '../content/reviews.json';
+import gallery from '../content/gallery.json';
 
 /* lazy glob: only the photographs that are actually used end up in dist/ */
 const photos = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/*.jpg');
@@ -16,6 +17,12 @@ const photo = async (name: string) => {
   if (!load) throw new Error(`Missing photo: ${name}`);
   return (await load()).default;
 };
+const galleryPhotos = import.meta.glob<{ default: ImageMetadata }>('../assets/gallery/*.jpg');
+const shots = await Promise.all(gallery.items.map(async (g) => {
+  const load = galleryPhotos[`../assets/gallery/${g.img}.jpg`];
+  if (!load) throw new Error(`Missing gallery photo: ${g.img}`);
+  return { ...g, src: (await load()).default };
+}));
 const strip = await Promise.all(site.strip.map(async (s) => ({ ...s, src: await photo(s.img) })));
 const trainers = await Promise.all(team.map(async (t) => ({ ...t, src: await photo(t.img) })));
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -146,6 +153,29 @@ const jsonLd = [
       </div>
     </section>
 
+    <section class="gallery wrap reveal" id="galeria">
+      <div class="inner">
+        <div class="head set"><h2>{gallery.title}</h2><p class="lede">{gallery.lede}</p></div>
+        <div class="carousel set" id="carousel">
+          <ul class="track" id="track" aria-label="Zdjęcia salonu">
+            {shots.map((g, i) => (
+              <li>
+                <figure class="shot">
+                  <Image src={g.src} alt={g.alt} widths={[480, 800, 1200]} sizes="(min-width: 900px) 46vw, 86vw" loading="lazy" />
+                  <figcaption><span class="n">{String(i + 1).padStart(2, '0')}</span> {nb(g.caption)}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+          <div class="nav">
+            <button type="button" class="arrow" data-dir="-1" aria-label="Poprzednie zdjęcie">←</button>
+            <span class="count" id="count">01 / {String(shots.length).padStart(2, '0')}</span>
+            <button type="button" class="arrow" data-dir="1" aria-label="Następne zdjęcie">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="proof wrap reveal" id="opinie">
       <div class="inner">
         <div class="head set"><h2>{reviews.title}</h2><p class="lede">{reviews.lede}</p></div>
@@ -223,6 +253,18 @@ const jsonLd = [
       /* alpha: no backend wired yet; the thank-you state is shown in place */
       form.innerHTML = '<p class="thanks">' + thanks + '</p>';
     });
+    /* carousel: native scroll-snap; the arrows scroll by one item, the counter follows the scroll */
+    const track = document.getElementById('track');
+    const count = document.getElementById('count');
+    const items = Array.from(track.children);
+    const step = () => items[1].offsetLeft - items[0].offsetLeft;
+    const current = () => Math.round(track.scrollLeft / step());
+    document.querySelectorAll('#carousel .arrow').forEach((b) => b.addEventListener('click', () => {
+      const next = Math.min(items.length - 1, Math.max(0, current() + Number(b.dataset.dir)));
+      track.scrollTo({ left: items[next].offsetLeft - items[0].offsetLeft, behavior: 'smooth' });
+    }));
+    let raf;
+    track.addEventListener('scroll', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => { count.textContent = String(current() + 1).padStart(2, '0') + ' / ' + String(items.length).padStart(2, '0'); }); }, { passive: true });
     const bar = document.getElementById('bar');
     new IntersectionObserver(([en]) => bar.classList.toggle('on', !en.isIntersecting && en.boundingClientRect.top < 0), { threshold: 0 }).observe(document.getElementById('hero'));
   </script>

@@ -1,0 +1,20 @@
+{
+  "title": "Galeria",
+  "lede": "Salon przy Oświęcimskiej 1 i praca przy fotelu. Tu odbywa się szkolenie.",
+  "items": [
+    { "img": "salon-szeroko", "alt": "Sala Barber Shopu Old Town: fotele barberskie, lustra w złotych ramach, ceglane ściany", "caption": "Sala główna. Cztery fotele, lustra, cegła." },
+    { "img": "dwa-fotele-praca", "alt": "Dwóch barberów strzyże klientów przy sąsiednich fotelach", "caption": "Dwa fotele pracują równolegle. Tak wygląda zwykły dzień." },
+    { "img": "kuba-strzyze-zegar", "alt": "Kuba strzyże klienta nożyczkami, w tle zegar na ceglanej ścianie", "caption": "Kuba przy fotelu." },
+    { "img": "basia-lustro-klient", "alt": "Basia i uśmiechnięty klient w odbiciu lustra, klient w pelerynie Old Town", "caption": "Basia i klient w lustrze." },
+    { "img": "pedzel-miska", "alt": "Pędzel do golenia i miska z pianą w dłoniach barbera", "caption": "Pędzel, miska, piana. Początek golenia." },
+    { "img": "goracy-recznik", "alt": "Barber owija twarz klienta gorącym ręcznikiem", "caption": "Gorący ręcznik przed brzytwą." },
+    { "img": "brzytwa-detal", "alt": "Brzytwa prowadzona po spienionym policzku klienta", "caption": "Brzytwa. Uczymy jej od pierwszych ruchów." },
+    { "img": "nozyczki-grzebien-fade", "alt": "Nożyczki i grzebień przy uchu klienta, przejście fade", "caption": "Nożyczki na grzebieniu przy przejściu." },
+    { "img": "basia-masaz-twarzy", "alt": "Basia masuje twarz klienta po goleniu", "caption": "Pielęgnacja po goleniu." },
+    { "img": "maszynki-stanowisko", "alt": "Maszynki i trymery na stanowisku przy lustrze", "caption": "Stanowisko. Na szkoleniu pracujesz na tym sprzęcie." },
+    { "img": "salon-fotele", "alt": "Fotele barberskie na posadzce w gwiazdy, w głębi lodówka Coca-Cola", "caption": "Posadzka w gwiazdy, z której wzięliśmy motyw tej strony." },
+    { "img": "recepcja", "alt": "Drewniana lada recepcji na tle zielonej ściany z tablicami", "caption": "Recepcja. Tu klient zaczyna i kończy wizytę." },
+    { "img": "szyld-old-town", "alt": "Drewniany szyld Barber Shop Old Town w gablocie", "caption": "Old Town od 2018 roku." },
+    { "img": "nozyczki-2018", "alt": "Oprawione nożyczki z napisem 2018 na ceglanej ścianie", "caption": "Pierwsze nożyczki salonu, oprawione na ścianie." }
+  ]
+}
