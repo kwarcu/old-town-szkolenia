@@ -18,7 +18,17 @@ git -C /Users/bartek/Dev/old-town-szkolenia/.claude/worktrees/alpha-website-phot
 git -C /Users/bartek/Dev/old-town-szkolenia merge --ff-only claude/alpha-website-photos-46fca4 && git -C /Users/bartek/Dev/old-town-szkolenia push -u origin main
 ```
 
-## 2. Switch Pages on (once)
+## 2. Password for the alpha (once)
+
+The workflow reads the repository secret `ALPHA_PASSWORD`. When it is set, every HTML page is encrypted with StatiCrypt (client-side AES): visitors see a password prompt, crawlers get `noindex` and a `Disallow: /` robots file, and `llms.txt` and the sitemap are stubbed. Remove the secret to publish the open site.
+
+```bash
+gh secret set ALPHA_PASSWORD --repo {owner}/old-town-szkolenia
+```
+
+(it prompts for the value; pick something Basia can type on a phone). "Zapamiętaj mnie" keeps the page open on her device for 30 days.
+
+## 3. Switch Pages on (once)
 
 Repository → Settings → Pages → Build and deployment → Source: **GitHub Actions**. The workflow `.github/workflows/deploy.yml` runs on every push to `main` and publishes `dist/`.
 
@@ -28,9 +38,9 @@ Or from the terminal:
 gh api -X POST repos/{owner}/old-town-szkolenia/pages -f build_type=workflow
 ```
 
-## 3. The link for Basia
+## 4. The link for Basia
 
-`https://<owner>.github.io/old-town-szkolenia/` — works on phone and desktop, no login. A private repository can still publish a public Pages site on GitHub Pro/Team; on a free account the repository must be public for Pages to work.
+`https://<owner>.github.io/old-town-szkolenia/` plus the password — works on phone and desktop. On a free GitHub account Pages needs a public repository: the page itself is then encrypted, but the source (texts, photos) is readable on github.com. With GitHub Pro the repository can stay private. Cloudflare Pages (free, private repo, optional Cloudflare Access with e-mail codes) is the alternative if that matters.
 
 ## Later: the real domain
 

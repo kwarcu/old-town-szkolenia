@@ -31,6 +31,9 @@ jobs:
           # Project site: https://<owner>.github.io/<repo>/ — adjust when a custom domain is attached.
           SITE_URL: https://${{ github.repository_owner }}.github.io
           BASE_PATH: /${{ github.event.repository.name }}/
+          # Alpha: set the ALPHA_PASSWORD repository secret to put the page behind a password
+          # (StatiCrypt, client-side AES; crawlers get noindex + robots Disallow). Remove the secret to open the site.
+          ALPHA_PASSWORD: ${{ secrets.ALPHA_PASSWORD }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

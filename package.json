@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/protect.mjs",
     "preview": "astro preview",
     "screens": "node scripts/screenshots.mjs"
   },
@@ -17,6 +17,7 @@
     "sharp": "^0.34.0"
   },
   "devDependencies": {
-    "playwright": "^1.64.1"
+    "playwright": "^1.64.1",
+    "staticrypt": "^3.5.4"
   }
 }
