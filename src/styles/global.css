@@ -231,6 +231,13 @@ footer.site a { text-decoration: none; min-height: 32px; display: inline-flex; a
 footer.site a:hover { color: var(--brass); }
 footer.site .stamp { color: var(--muted); font-size: 14px; }
 
+
+/* ---------- the tile band: the eight-pointed star from the shop's floor, used twice as a divider ---------- */
+.tileband { height: 26px; background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2752%27%20height%3D%2726%27%20viewBox%3D%270%200%2052%2026%27%3E%3Cg%20fill%3D%27%23161615%27%3E%3Cg%20transform%3D%27translate%285%204%29%20scale%28.18%29%27%3E%3Cpath%20d%3D%27M50.00%2C0.00L57.27%2C32.45L85.36%2C14.64L67.55%2C42.73L100.00%2C50.00L67.55%2C57.27L85.36%2C85.36L57.27%2C67.55L50.00%2C100.00L42.73%2C67.55L14.64%2C85.36L32.45%2C57.27L0.00%2C50.00L32.45%2C42.73L14.64%2C14.64L42.73%2C32.45Z%27%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%27translate%2831%204%29%20scale%28.18%29%27%3E%3Cpath%20d%3D%27M50.00%2C0.00L57.27%2C32.45L85.36%2C14.64L67.55%2C42.73L100.00%2C50.00L67.55%2C57.27L85.36%2C85.36L57.27%2C67.55L50.00%2C100.00L42.73%2C67.55L14.64%2C85.36L32.45%2C57.27L0.00%2C50.00L32.45%2C42.73L14.64%2C14.64L42.73%2C32.45Z%27%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x center/auto 26px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.tileband + section { padding-top: var(--pad); }
+.tileband + section.wrap > .inner { border-top: 0; padding-top: 0; }
+footer.site { border-top: 0; }
+
 /* ---------- sticky bar (mobile) ---------- */
 .bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: grid; grid-template-columns: 1.6fr 1fr; gap: 10px; padding: 10px var(--g); background: var(--paper); border-top: 2px solid var(--ink); transform: translateY(110%); transition: transform .3s ease; }
 .bar.on { transform: none; }
