@@ -78,6 +78,7 @@ const jsonLd = [
             <a class="btn" href="#kontakt">{site.hero.ctaPrimary}</a>
             <a class="tlink" href={contact.phoneHref}>{nb(contact.phone)}</a>
           </div>
+          {site.hero.quote && <p class="hero-quote">{site.hero.quote}</p>}
         </div>
         <figure class="hero-photo">
           <picture>

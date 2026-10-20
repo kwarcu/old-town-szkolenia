@@ -101,7 +101,8 @@ header.site.open nav.top a { padding: 11px 0; border-bottom: 1px solid var(--rul
 .proof .facts li:nth-child(even) { padding-left: 16px; }
 .proof .facts li:nth-child(3) { padding-left: 16px; border-left: 1px solid var(--rule); }
 .proof .foot { margin-top: 16px; }
-.hero p.sub { margin-top: 18px; font-size: 16px; color: var(--muted); }
+.hero p.sub { margin-top: 18px; font-size: 17px; color: var(--ink); max-width: 36ch; }
+.hero .hero-quote { margin-top: 24px; padding-left: 14px; border-left: 3px solid var(--brass); font-size: 15px; line-height: 1.5; color: var(--muted); max-width: 40ch; }
 
 /* ---------- Szkolenia: two ruled columns on the paper, the price set as an ink plate ---------- */
 .courses .head .lede { max-width: 46ch; }
@@ -329,14 +330,15 @@ footer.site { border-top: 0; }
   .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 44% 48%; }
   .hero-body { padding: 0; }
   .hero .kicker { font-size: 17px; margin-bottom: 22px; }
-  .hero h1 { font-size: clamp(56px, 5.6vw, 88px); line-height: .94; letter-spacing: .012em; }
+  .hero h1 { font-size: clamp(52px, 5vw, 78px); line-height: .94; letter-spacing: .012em; }
   .hero .facts { font-size: 18px; margin-top: 28px; grid-template-columns: repeat(4, auto); justify-content: start; column-gap: 0; }
   .proof .facts { font-size: 30px; }
   .carousel { margin-top: 34px; }
   .carousel .track { gap: 20px; margin: 0; padding: 0; scroll-padding-inline: 0; }
   .carousel .track li { flex: 0 0 calc(50% - 10px); }
   .carousel .nav { margin-top: 20px; }
-  .hero p.sub { font-size: 18px; margin-top: 22px; max-width: 36ch; }
+  .hero p.sub { font-size: 19px; margin-top: 22px; max-width: 36ch; }
+  .hero .hero-quote { font-size: 16px; margin-top: 28px; }
   .hero .facts li { border-bottom: 0; padding: 12px 18px 0 0; }
   .facts li:nth-child(n+2) { border-left: 1px solid var(--rule); padding-left: 18px; }
   .hero p.sub { font-size: 20px; max-width: 32ch; margin-top: 30px; }
