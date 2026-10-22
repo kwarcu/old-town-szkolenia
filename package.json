@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "astro build && node scripts/protect.mjs",
     "preview": "astro preview",
-    "screens": "node scripts/screenshots.mjs"
+    "screens": "node scripts/screenshots.mjs",
+    "content-doc": "node scripts/content-doc-crops.mjs && node scripts/content-doc.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -17,6 +18,7 @@
     "sharp": "^0.34.0"
   },
   "devDependencies": {
+    "docx": "^9.13.0",
     "playwright": "^1.64.1",
     "staticrypt": "^3.5.4"
   }

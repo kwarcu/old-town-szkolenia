@@ -10,3 +10,6 @@ dist/
 screens/
 docs/critique/
 src/assets/photo-pool/
+docs/content-doc/crops/
+docs/content-doc/*.docx
+docs/content-doc/*.pdf
